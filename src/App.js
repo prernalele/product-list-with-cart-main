@@ -1,9 +1,12 @@
 import React from "react";
+import Dessert from "./components/Dessert";
 
 const  App = () => {
 
 return (
-    <h2 className="bg-black py-6 sm:py-12">This is a heading</h2>
+    <div className="flex bg-rose-50 h-screen">
+        <Dessert />
+    </div>
     )
 
 }

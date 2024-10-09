@@ -3,3 +3,10 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+@font-face {
+    font-family: 'variable';
+    src: url('../assets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
