@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "product list project",
   "scripts": {
-    "start": "rm -rf .parcel-cache && parcel",
+    "start": "rm -rf .parcel-cache && parcel index.html",
     "build": "rm -rf .parcel-cache && parcel build"
   },
   "repository": {
