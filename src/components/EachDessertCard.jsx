@@ -1,19 +1,19 @@
 import React from "react";
-import imgData from '../../public/assets/images/image-panna-cotta-desktop.jpg'
 
+const EachDessertCard = ( {image, name, price, category}) => {
 
-
-const EachDessertCard = ({eachData}) => {
-    const {image, category, name, price} = eachData
     const {desktop, mobile, tablet, thumbnail} = image
-    console.log("desktop", desktop)
-    const pathImage = "../../public/assets/images/image-panna-cotta-desktop.jpg"
 return (
     <div>
-        <img src={pathImage}></img>
-        <div>{category}</div>
-        <div>{name}</div>
-        <div>{price}</div>
+
+       {/* <source media="(min-width:465px)" srcSet={ desktop}/>
+        <source media="(min-width:465px)" srcSet={'./assets/images/image-cake-mobile.jpg'}/>}
+        {/*<source media="(min-width:650px)" srcSet={arrayImgPath[1]} />*/}
+        {/*<img src={arrayImgPath[1]} alt={`picture of ${name}`}/>*/}
+        <img src={desktop}/>
+        <div>Category: {category}</div>
+        <div>Name: {name}</div>
+        <div>Price: {price}</div>
     </div>
 )
 }
