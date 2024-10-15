@@ -11,7 +11,7 @@ useEffect (()=> {
 },[])
 
 return (
-    <div className="flex bg-rose-50 h-screen">
+    <div className="flex font-custom bg-rose-50 h-screen overflow-scroll">
         <Dessert data={allData}/>
     </div>
     )
