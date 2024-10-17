@@ -27285,7 +27285,7 @@ const Dessert = ({ data })=>{
     console.log("data", data);
     const pageHeading = "Desserts";
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-col mx-14 h-screen w-1/2",
+        className: "flex flex-col ml-6 mt-6 h-screen",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 className: "font-redhat text-lg font-bold",
@@ -27299,7 +27299,7 @@ const Dessert = ({ data })=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex flex-row flex-wrap ",
+                className: "flex flex-row flex-wrap",
                 children: data?.map((eachItem, index)=>{
                     const { image, name, price, category } = eachItem;
                     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _eachDessertCardDefault.default), {
@@ -27350,10 +27350,12 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 const EachDessertCard = ({ image, name, price, category })=>{
     const { desktop, mobile, tablet, thumbnail } = image;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-col m-11 font-redhat",
+        className: "flex flex-col mt-4 mr-12 font-redhat",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                src: desktop
+                className: "size-48",
+                src: desktop,
+                alt: "picture of a ${name}"
             }, void 0, false, {
                 fileName: "src/components/EachDessertCard.jsx",
                 lineNumber: 8,
