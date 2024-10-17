@@ -4,12 +4,12 @@ const EachDessertCard = ( {image, name, price, category}) => {
 
     const {desktop, mobile, tablet, thumbnail} = image
 return (
-    <div className="flex flex-col mt-4 mr-12 font-redhat">
-        <img className="size-48" src={desktop} alt="picture of a ${name}"/>
-        <div className="flex flex-col">
+    <div className="flex flex-col mt-4 font-redhat">
+        <img className="size-52" src={desktop} alt="picture of a ${name}"/>
+        <div className="flex flex-col mt-8">
             <div>{category}</div>
-            <div>{name}</div>
-            <div>${price}</div>
+            <div className="font-semibold">{name}</div>
+            <div className="text-customRed">${price}</div>
         </div>
 
     </div>

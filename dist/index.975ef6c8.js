@@ -27231,29 +27231,42 @@ var _dataJson = require("../data.json");
 var _dataJsonDefault = parcelHelpers.interopDefault(_dataJson);
 var _dessert = require("./components/Dessert");
 var _dessertDefault = parcelHelpers.interopDefault(_dessert);
+var _shoppingCart = require("./components/ShoppingCart");
+var _shoppingCartDefault = parcelHelpers.interopDefault(_shoppingCart);
 var _s = $RefreshSig$();
 const App = ()=>{
     _s();
     const [allData, setAllData] = (0, _react.useState)(null);
+    const [numberOfItemsInCart, setNumberOfItemsInCart] = (0, _react.useState)(0);
     (0, _react.useEffect)(()=>{
         fetch((0, _dataJsonDefault.default)).then(setAllData((0, _dataJsonDefault.default))).catch((error)=>console.log("Error fetching data", error));
     }, []);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex font-custom bg-rose-50 h-screen overflow-scroll",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _dessertDefault.default), {
-            data: allData
-        }, void 0, false, {
-            fileName: "src/App.js",
-            lineNumber: 15,
-            columnNumber: 9
-        }, undefined)
-    }, void 0, false, {
+        className: "flex font-custom bg-rose-50 justify-evenly overflow-scroll",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _dessertDefault.default), {
+                data: allData
+            }, void 0, false, {
+                fileName: "src/App.js",
+                lineNumber: 17,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shoppingCartDefault.default), {
+                numberOfItemsInCart: numberOfItemsInCart,
+                setNumberOfItemsInCart: setNumberOfItemsInCart
+            }, void 0, false, {
+                fileName: "src/App.js",
+                lineNumber: 18,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 14,
+        lineNumber: 16,
         columnNumber: 5
     }, undefined);
 };
-_s(App, "upnytrp6AOtYZ/xX5jMNYzp9Fzo=");
+_s(App, "sVxIvBNEiwP7BS8gVXIoNNoxjkY=");
 _c = App;
 exports.default = App;
 var _c;
@@ -27264,7 +27277,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../data.json":"cn6Iz","./components/Dessert":"jgmu9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cn6Iz":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../data.json":"cn6Iz","./components/Dessert":"jgmu9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/ShoppingCart":"4lJgb"}],"cn6Iz":[function(require,module,exports) {
 module.exports = JSON.parse('[{"image":{"thumbnail":"./assets/images/image-waffle-thumbnail.jpg","mobile":"./assets/images/image-waffle-mobile.jpg","tablet":"./assets/images/image-waffle-tablet.jpg","desktop":"./assets/images/image-waffle-desktop.jpg"},"name":"Waffle with Berries","category":"Waffle","price":6.5},{"image":{"thumbnail":"./assets/images/image-creme-brulee-thumbnail.jpg","mobile":"./assets/images/image-creme-brulee-mobile.jpg","tablet":"./assets/images/image-creme-brulee-tablet.jpg","desktop":"./assets/images/image-creme-brulee-desktop.jpg"},"name":"Vanilla Bean Cr\xe8me Br\xfbl\xe9e","category":"Cr\xe8me Br\xfbl\xe9e","price":7},{"image":{"thumbnail":"./assets/images/image-macaron-thumbnail.jpg","mobile":"./assets/images/image-macaron-mobile.jpg","tablet":"./assets/images/image-macaron-tablet.jpg","desktop":"./assets/images/image-macaron-desktop.jpg"},"name":"Macaron Mix of Five","category":"Macaron","price":8},{"image":{"thumbnail":"./assets/images/image-tiramisu-thumbnail.jpg","mobile":"./assets/images/image-tiramisu-mobile.jpg","tablet":"./assets/images/image-tiramisu-tablet.jpg","desktop":"./assets/images/image-tiramisu-desktop.jpg"},"name":"Classic Tiramisu","category":"Tiramisu","price":5.5},{"image":{"thumbnail":"./assets/images/image-baklava-thumbnail.jpg","mobile":"./assets/images/image-baklava-mobile.jpg","tablet":"./assets/images/image-baklava-tablet.jpg","desktop":"./assets/images/image-baklava-desktop.jpg"},"name":"Pistachio Baklava","category":"Baklava","price":4},{"image":{"thumbnail":"./assets/images/image-meringue-thumbnail.jpg","mobile":"./assets/images/image-meringue-mobile.jpg","tablet":"./assets/images/image-meringue-tablet.jpg","desktop":"./assets/images/image-meringue-desktop.jpg"},"name":"Lemon Meringue Pie","category":"Pie","price":5},{"image":{"thumbnail":"./assets/images/image-cake-thumbnail.jpg","mobile":"./assets/images/image-cake-mobile.jpg","tablet":"./assets/images/image-cake-tablet.jpg","desktop":"./assets/images/image-cake-desktop.jpg"},"name":"Red Velvet Cake","category":"Cake","price":4.5},{"image":{"thumbnail":"./assets/images/image-brownie-thumbnail.jpg","mobile":"./assets/images/image-brownie-mobile.jpg","tablet":"./assets/images/image-brownie-tablet.jpg","desktop":"./assets/images/image-brownie-desktop.jpg"},"name":"Salted Caramel Brownie","category":"Brownie","price":4.5},{"image":{"thumbnail":"./assets/images/image-panna-cotta-thumbnail.jpg","mobile":"./assets/images/image-panna-cotta-mobile.jpg","tablet":"./assets/images/image-panna-cotta-tablet.jpg","desktop":"./assets/images/image-panna-cotta-desktop.jpg"},"name":"Vanilla Panna Cotta","category":"Panna Cotta","price":6.5}]');
 
 },{}],"jgmu9":[function(require,module,exports) {
@@ -27285,7 +27298,7 @@ const Dessert = ({ data })=>{
     console.log("data", data);
     const pageHeading = "Desserts";
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-col ml-6 mt-6 h-screen",
+        className: "flex flex-col ml-20 mt-6 h-screen",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 className: "font-redhat text-lg font-bold",
@@ -27299,7 +27312,7 @@ const Dessert = ({ data })=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex flex-row flex-wrap",
+                className: "flex flex-row flex-wrap justify-evenly",
                 children: data?.map((eachItem, index)=>{
                     const { image, name, price, category } = eachItem;
                     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _eachDessertCardDefault.default), {
@@ -27350,10 +27363,10 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 const EachDessertCard = ({ image, name, price, category })=>{
     const { desktop, mobile, tablet, thumbnail } = image;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-col mt-4 mr-12 font-redhat",
+        className: "flex flex-col mt-4 font-redhat",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "size-48",
+                className: "size-52",
                 src: desktop,
                 alt: "picture of a ${name}"
             }, void 0, false, {
@@ -27362,7 +27375,7 @@ const EachDessertCard = ({ image, name, price, category })=>{
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex flex-col",
+                className: "flex flex-col mt-8",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: category
@@ -27372,6 +27385,7 @@ const EachDessertCard = ({ image, name, price, category })=>{
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "font-semibold",
                         children: name
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
@@ -27379,6 +27393,7 @@ const EachDessertCard = ({ image, name, price, category })=>{
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "text-customRed",
                         children: [
                             "$",
                             price
@@ -27579,6 +27594,106 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"7422ead32dcc1e6b":"786KC"}]},["farZc","1xC6H","8lqZg"], "8lqZg", "parcelRequirea0bd")
+},{"7422ead32dcc1e6b":"786KC"}],"4lJgb":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$65eb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$65eb.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _illustrationEmptyCartSvg = require("../../src/assets/images/illustration-empty-cart.svg");
+var _illustrationEmptyCartSvgDefault = parcelHelpers.interopDefault(_illustrationEmptyCartSvg);
+const ShoppingCart = ({ numberOfItemsInCart, setNumberOfItemsInCart })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex font-redhat flex-col bg-slate-50 ml-0 pl-4 pr-10 h-80 w-80 justify-evenly mt-10 mr-20",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "flex text-orange-500 font-bold ",
+                children: `Your Cart (${numberOfItemsInCart})`
+            }, void 0, false, {
+                fileName: "src/components/ShoppingCart.jsx",
+                lineNumber: 7,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "flex justify-center",
+                src: (0, _illustrationEmptyCartSvgDefault.default),
+                alt: "Empty Cart illustration",
+                width: "100",
+                height: "100"
+            }, void 0, false, {
+                fileName: "src/components/ShoppingCart.jsx",
+                lineNumber: 8,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "flex font-redhat justify-center text-red-900",
+                children: "Your added items will appear here"
+            }, void 0, false, {
+                fileName: "src/components/ShoppingCart.jsx",
+                lineNumber: 9,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/ShoppingCart.jsx",
+        lineNumber: 6,
+        columnNumber: 5
+    }, undefined);
+};
+_c = ShoppingCart;
+exports.default = ShoppingCart;
+var _c;
+$RefreshReg$(_c, "ShoppingCart");
+
+  $parcel$ReactRefreshHelpers$65eb.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../src/assets/images/illustration-empty-cart.svg":"acS24"}],"acS24":[function(require,module,exports) {
+module.exports = require("b68bc04b37b7fdd").getBundleURL("bLxZJ") + "illustration-empty-cart.e3d01470.svg" + "?" + Date.now();
+
+},{"b68bc04b37b7fdd":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}]},["farZc","1xC6H","8lqZg"], "8lqZg", "parcelRequirea0bd")
 
 //# sourceMappingURL=index.975ef6c8.js.map

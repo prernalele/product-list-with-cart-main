@@ -6,9 +6,9 @@ const Dessert = ({data}) => {
     const pageHeading = "Desserts"
 
     return (
-        <div className="flex flex-col ml-6 mt-6 h-screen">
+        <div className="flex flex-col ml-20 mt-6 h-screen">
             <h1 className="font-redhat text-lg font-bold"> {pageHeading}</h1>
-            <div className="flex flex-row flex-wrap">
+            <div className="flex flex-row flex-wrap justify-evenly">
             {data?.map((eachItem, index) => {
             const { image, name, price, category} = eachItem;
             return (
