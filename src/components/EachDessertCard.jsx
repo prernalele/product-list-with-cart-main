@@ -4,7 +4,7 @@ const EachDessertCard = ( {image, name, price, category}) => {
 
     const {desktop, mobile, tablet, thumbnail} = image
 return (
-    <div className="flex flex-col m-24 font-redhat">
+    <div className="flex flex-col m-11 font-redhat">
         <img src={desktop}/>
         <div className="flex flex-col">
             <div>{category}</div>
