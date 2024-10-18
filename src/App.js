@@ -6,6 +6,8 @@ import ShoppingCart from "./components/ShoppingCart";
 const  App = () => {
     const [allData, setAllData] = useState(null)
     const [numberOfItemsInCart, setNumberOfItemsInCart] = useState(0)
+    const [itemsInCart, setItemsInCart] = useState([])
+
 useEffect (()=> {
     fetch(data)
     .then(setAllData(data))
@@ -14,8 +16,15 @@ useEffect (()=> {
 
 return (
     <div className="flex font-custom bg-rose-50 justify-evenly overflow-scroll">
-        <Dessert data={allData}/>
-        <ShoppingCart numberOfItemsInCart={numberOfItemsInCart} 
+        <Dessert 
+        data={allData}
+        numberOfItemsInCart={numberOfItemsInCart} 
+        setNumberOfItemsInCart={setNumberOfItemsInCart}
+        itemsInCart={itemsInCart}
+        setItemsInCart={setItemsInCart}
+        />
+        <ShoppingCart 
+        numberOfItemsInCart={numberOfItemsInCart} 
         setNumberOfItemsInCart={setNumberOfItemsInCart} />
     </div>
     )

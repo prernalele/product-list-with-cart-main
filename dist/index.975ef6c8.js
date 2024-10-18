@@ -27238,6 +27238,7 @@ const App = ()=>{
     _s();
     const [allData, setAllData] = (0, _react.useState)(null);
     const [numberOfItemsInCart, setNumberOfItemsInCart] = (0, _react.useState)(0);
+    const [itemsInCart, setItemsInCart] = (0, _react.useState)([]);
     (0, _react.useEffect)(()=>{
         fetch((0, _dataJsonDefault.default)).then(setAllData((0, _dataJsonDefault.default))).catch((error)=>console.log("Error fetching data", error));
     }, []);
@@ -27245,10 +27246,14 @@ const App = ()=>{
         className: "flex font-custom bg-rose-50 justify-evenly overflow-scroll",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _dessertDefault.default), {
-                data: allData
+                data: allData,
+                numberOfItemsInCart: numberOfItemsInCart,
+                setNumberOfItemsInCart: setNumberOfItemsInCart,
+                itemsInCart: itemsInCart,
+                setItemsInCart: setItemsInCart
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 17,
+                lineNumber: 19,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shoppingCartDefault.default), {
@@ -27256,17 +27261,17 @@ const App = ()=>{
                 setNumberOfItemsInCart: setNumberOfItemsInCart
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 18,
+                lineNumber: 26,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 16,
+        lineNumber: 18,
         columnNumber: 5
     }, undefined);
 };
-_s(App, "sVxIvBNEiwP7BS8gVXIoNNoxjkY=");
+_s(App, "eGbRdApek0U3iYfidgOtb/yAqCg=");
 _c = App;
 exports.default = App;
 var _c;
@@ -27294,7 +27299,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _eachDessertCard = require("./EachDessertCard");
 var _eachDessertCardDefault = parcelHelpers.interopDefault(_eachDessertCard);
-const Dessert = ({ data })=>{
+const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart })=>{
     console.log("data", data);
     const pageHeading = "Desserts";
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27319,7 +27324,11 @@ const Dessert = ({ data })=>{
                         image: image,
                         name: name,
                         price: price,
-                        category: category
+                        category: category,
+                        numberOfItemsInCart: numberOfItemsInCart,
+                        setNumberOfItemsInCart: setNumberOfItemsInCart,
+                        itemsInCart: itemsInCart,
+                        setItemsInCart: setItemsInCart
                     }, index, false, {
                         fileName: "src/components/Dessert.jsx",
                         lineNumber: 15,
@@ -27362,29 +27371,40 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _iconAddToCartSvg = require("../../static/assets/images/icon-add-to-cart.svg");
 var _iconAddToCartSvgDefault = parcelHelpers.interopDefault(_iconAddToCartSvg);
-const EachDessertCard = ({ image, name, price, category })=>{
+const EachDessertCard = ({ image, name, price, category, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart })=>{
+    const addToCartClickHandler = (e)=>{
+        console.log("name", name);
+        console.log("price", price);
+        setNumberOfItemsInCart((prev)=>prev + 1);
+        setItemsInCart((prevItems)=>[
+                prevItems,
+                name
+            ]);
+    };
     const { desktop, mobile, tablet, thumbnail } = image;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex flex-col mt-4 font-redhat",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "size-52",
+                className: "size-52 -my-5",
                 src: desktop,
                 alt: "picture of a ${name}"
             }, void 0, false, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 9,
+                lineNumber: 24,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex justify-center pt-2 mt-0.5 h-10 w-50 rounded-full bg-slate-50",
+                role: "button",
+                onClick: (e)=>addToCartClickHandler(e),
+                className: "flex justify-center pt-2 mt-0.5 ml-6 h-10 w-40 rounded-full bg-slate-50",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                         className: " flex size-5",
                         src: (0, _iconAddToCartSvgDefault.default)
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 11,
+                        lineNumber: 26,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27392,13 +27412,13 @@ const EachDessertCard = ({ image, name, price, category })=>{
                         children: "Add to Cart"
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 12,
+                        lineNumber: 27,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 10,
+                lineNumber: 25,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27408,7 +27428,7 @@ const EachDessertCard = ({ image, name, price, category })=>{
                         children: category
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 15,
+                        lineNumber: 30,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27416,7 +27436,7 @@ const EachDessertCard = ({ image, name, price, category })=>{
                         children: name
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 16,
+                        lineNumber: 31,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27427,19 +27447,19 @@ const EachDessertCard = ({ image, name, price, category })=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 17,
+                        lineNumber: 32,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 14,
+                lineNumber: 29,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/EachDessertCard.jsx",
-        lineNumber: 8,
+        lineNumber: 23,
         columnNumber: 5
     }, undefined);
 };
