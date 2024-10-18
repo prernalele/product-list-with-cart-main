@@ -1,5 +1,5 @@
 import React from "react";
-import emptyCartIllustration from '../../src/assets/images/illustration-empty-cart.svg'
+import emptyCartIllustration from '../../static/assets/images/illustration-empty-cart.svg'
 const ShoppingCart = ({numberOfItemsInCart, setNumberOfItemsInCart}) => {
 return (
 
@@ -8,7 +8,6 @@ return (
         <img className="flex justify-center" src={emptyCartIllustration} alt="Empty Cart illustration" width="100" height="100" />
         <p className="flex font-redhat justify-center text-red-900">Your added items will appear here</p>
     </div>
-
 
 
 )
