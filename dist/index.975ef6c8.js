@@ -27243,7 +27243,7 @@ const App = ()=>{
         fetch((0, _dataJsonDefault.default)).then(setAllData((0, _dataJsonDefault.default))).catch((error)=>console.log("Error fetching data", error));
     }, []);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex font-custom bg-rose-50 justify-evenly overflow-scroll",
+        className: "flex font-custom bg-rose-50 justify-around overflow-scroll",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _dessertDefault.default), {
                 data: allData,
@@ -27306,7 +27306,7 @@ const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCar
         className: "flex flex-col ml-20 mt-6 h-screen",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                className: "font-redhat text-lg font-bold",
+                className: "font-redhat mb-5 ml-4 text-lg font-bold",
                 children: [
                     " ",
                     pageHeading
@@ -27317,7 +27317,7 @@ const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCar
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex flex-row flex-wrap justify-evenly",
+                className: "flex flex-row flex-wrap ",
                 children: data?.map((eachItem, index)=>{
                     const { image, name, price, category } = eachItem;
                     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _eachDessertCardDefault.default), {
@@ -27371,6 +27371,10 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _iconAddToCartSvg = require("../../static/assets/images/icon-add-to-cart.svg");
 var _iconAddToCartSvgDefault = parcelHelpers.interopDefault(_iconAddToCartSvg);
+var _iconIncrementQuantitySvg = require("../../static/assets/images/icon-increment-quantity.svg");
+var _iconIncrementQuantitySvgDefault = parcelHelpers.interopDefault(_iconIncrementQuantitySvg);
+var _iconRemoveItemSvg = require("../../static/assets/images/icon-remove-item.svg");
+var _iconRemoveItemSvgDefault = parcelHelpers.interopDefault(_iconRemoveItemSvg);
 const EachDessertCard = ({ image, name, price, category, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart })=>{
     const addToCartClickHandler = (e)=>{
         console.log("name", name);
@@ -27383,52 +27387,77 @@ const EachDessertCard = ({ image, name, price, category, numberOfItemsInCart, se
     };
     const { desktop, mobile, tablet, thumbnail } = image;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-col mt-4 font-redhat",
+        className: "flex flex-col mx-4 mb-20 font-redhat",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "size-52 -my-5",
+                className: "size-52 -my-5 group-hover:outline-customRed",
                 src: desktop,
                 alt: "picture of a ${name}"
             }, void 0, false, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 24,
+                lineNumber: 27,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 role: "button",
-                onClick: (e)=>addToCartClickHandler(e),
-                className: "flex justify-center pt-2 mt-0.5 ml-6 h-10 w-40 rounded-full bg-slate-50",
+                className: "flex justify-center pt-2 mt-0.5 ml-6 h-10 group w-40 rounded-full bg-slate-50  hover:bg-customRed",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                        className: " flex size-5",
+                        className: "flex size-5 group-hover:invisible",
                         src: (0, _iconAddToCartSvgDefault.default)
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 26,
+                        lineNumber: 31,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-center font-redhat font-semibold",
+                        className: "flex text-center font-redhat font-semibold group-hover:invisible",
                         children: "Add to Cart"
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 27,
+                        lineNumber: 32,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        role: "button",
+                        className: " hidden group-hover:visible  ",
+                        onClick: (e)=>addToCartClickHandler(e),
+                        src: (0, _iconIncrementQuantitySvgDefault.default)
+                    }, void 0, false, {
+                        fileName: "src/components/EachDessertCard.jsx",
+                        lineNumber: 35,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "hidden group-hover:visible  ",
+                        children: numberOfItemsInCart
+                    }, void 0, false, {
+                        fileName: "src/components/EachDessertCard.jsx",
+                        lineNumber: 37,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        className: "hidden group-hover:visible ",
+                        src: (0, _iconRemoveItemSvgDefault.default)
+                    }, void 0, false, {
+                        fileName: "src/components/EachDessertCard.jsx",
+                        lineNumber: 38,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 25,
+                lineNumber: 28,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex flex-col mt-8",
+                className: "flex flex-col mt-4",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: category
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 30,
+                        lineNumber: 42,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27436,7 +27465,7 @@ const EachDessertCard = ({ image, name, price, category, numberOfItemsInCart, se
                         children: name
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 31,
+                        lineNumber: 43,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27447,19 +27476,19 @@ const EachDessertCard = ({ image, name, price, category, numberOfItemsInCart, se
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 32,
+                        lineNumber: 44,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 29,
+                lineNumber: 41,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/EachDessertCard.jsx",
-        lineNumber: 23,
+        lineNumber: 25,
         columnNumber: 5
     }, undefined);
 };
@@ -27473,7 +27502,7 @@ $RefreshReg$(_c, "EachDessertCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../static/assets/images/icon-add-to-cart.svg":"5YGND"}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../static/assets/images/icon-add-to-cart.svg":"5YGND","../../static/assets/images/icon-increment-quantity.svg":"8KFuV","../../static/assets/images/icon-remove-item.svg":"9Qjm4"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27679,7 +27708,13 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"4lJgb":[function(require,module,exports) {
+},{}],"8KFuV":[function(require,module,exports) {
+module.exports = require("21180b543f50665f").getBundleURL("bLxZJ") + "icon-increment-quantity.253c4397.svg" + "?" + Date.now();
+
+},{"21180b543f50665f":"lgJ39"}],"9Qjm4":[function(require,module,exports) {
+module.exports = require("822925d937b3d622").getBundleURL("bLxZJ") + "icon-remove-item.39f74ab5.svg" + "?" + Date.now();
+
+},{"822925d937b3d622":"lgJ39"}],"4lJgb":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$65eb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27702,7 +27737,7 @@ const ShoppingCart = ({ numberOfItemsInCart, setNumberOfItemsInCart })=>{
                 children: `Your Cart (${numberOfItemsInCart})`
             }, void 0, false, {
                 fileName: "src/components/ShoppingCart.jsx",
-                lineNumber: 7,
+                lineNumber: 8,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -27713,7 +27748,7 @@ const ShoppingCart = ({ numberOfItemsInCart, setNumberOfItemsInCart })=>{
                 height: "100"
             }, void 0, false, {
                 fileName: "src/components/ShoppingCart.jsx",
-                lineNumber: 8,
+                lineNumber: 9,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27721,13 +27756,13 @@ const ShoppingCart = ({ numberOfItemsInCart, setNumberOfItemsInCart })=>{
                 children: "Your added items will appear here"
             }, void 0, false, {
                 fileName: "src/components/ShoppingCart.jsx",
-                lineNumber: 9,
+                lineNumber: 10,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/ShoppingCart.jsx",
-        lineNumber: 6,
+        lineNumber: 7,
         columnNumber: 5
     }, undefined);
 };

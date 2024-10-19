@@ -7,8 +7,8 @@ const Dessert = ({data,numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart,
 
     return (
         <div className="flex flex-col ml-20 mt-6 h-screen">
-            <h1 className="font-redhat text-lg font-bold"> {pageHeading}</h1>
-            <div className="flex flex-row flex-wrap justify-evenly">
+            <h1 className="font-redhat mb-5 ml-4 text-lg font-bold"> {pageHeading}</h1>
+            <div className="flex flex-row flex-wrap ">
             {data?.map((eachItem, index) => {
             const { image, name, price, category} = eachItem;
             return (

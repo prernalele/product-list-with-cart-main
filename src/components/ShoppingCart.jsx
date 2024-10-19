@@ -1,5 +1,6 @@
 import React from "react";
 import emptyCartIllustration from '../../static/assets/images/illustration-empty-cart.svg'
+
 const ShoppingCart = ({numberOfItemsInCart, setNumberOfItemsInCart}) => {
 return (
 
