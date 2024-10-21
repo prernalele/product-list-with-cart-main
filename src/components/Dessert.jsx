@@ -1,7 +1,13 @@
 import React from "react";
 import EachDessertCard from "./EachDessertCard";
 
-const Dessert = ({data,numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart }) => {
+const Dessert = ({data,
+                numberOfItemsInCart,
+                setNumberOfItemsInCart, 
+                itemsInCart, 
+                setItemsInCart,
+                selectedItem,
+                setSelectedItem }) => {
     console.log("data", data)
     const pageHeading = "Desserts"
 
@@ -22,6 +28,8 @@ const Dessert = ({data,numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart,
                 setNumberOfItemsInCart={setNumberOfItemsInCart}
                 itemsInCart={itemsInCart}
                 setItemsInCart={setItemsInCart}
+                selectedItem={selectedItem}
+                setSelectedItem={setSelectedItem}
                 />
             )})}
             </div>

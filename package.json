@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "product list project",
   "scripts": {
-    "start": " parcel index.html",
-    "build": " parcel build index.html",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "start": " parcel index.html",
+    "build": " parcel build index.html"
+
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/prernalele/product-list-with-cart-main/issues"
   },
-  "homepage": "https://github.com/prernalele/product-list-with-cart-main#readme",
+  "homepage": "https://github.com/prernalele/product-list-with-cart-main",
   "devDependencies": {
     "gh-pages": "^6.2.0",
     "parcel": "^2.12.0",

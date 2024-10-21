@@ -11,13 +11,21 @@ const EachDessertCard = ( {image,
                         setNumberOfItemsInCart,
                         itemsInCart,
                         setItemsInCart,
+                        selectedItem,
+                        setSelectedItem,
                     }) => {
 
     const addToCartClickHandler = (e) => {
-        console.log("name", name)
-        console.log("price", price)
         setNumberOfItemsInCart((prev) => prev+1)
-        setItemsInCart((prevItems) => [prevItems, ...[name]])
+        const newItemToAppend = {
+            itemName: name,
+            itemPrice: price,
+        }
+        setItemsInCart((prevItems) => [...prevItems,newItemToAppend])
+        // setSelectedItem((prevAllSelections) => {
+         
+        // }
+        
     }
 
     const {desktop, mobile, tablet, thumbnail} = image
@@ -28,14 +36,15 @@ return (
         <div role="button" 
             className="flex justify-center pt-2 mt-0.5 ml-6 h-10 group w-40 rounded-full bg-slate-50 
             hover:bg-customRed">
+
             <img className="flex size-5 group-hover:invisible" src={iconAddToCart} />
             <p className="flex text-center font-redhat font-semibold
                 group-hover:invisible">Add to Cart</p> 
             
-            <img role="button" className=" hidden group-hover:visible  " onClick={(e) =>addToCartClickHandler(e)}  
+            <img role="button" className="invisible group-hover:visible  " onClick={(e) =>addToCartClickHandler(e)}  
             src={incrementIcon} />
-            <p className="hidden group-hover:visible  ">{numberOfItemsInCart}</p>
-            <img className="hidden group-hover:visible " src={decrementIcon} />
+            <p className="invisible group-hover:visible  ">{numberOfItemsInCart}</p>
+            <img className="invisible group-hover:visible " src={decrementIcon} />
         </div> 
 
         <div className="flex flex-col mt-4">

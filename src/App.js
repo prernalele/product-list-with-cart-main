@@ -7,6 +7,7 @@ const  App = () => {
     const [allData, setAllData] = useState(null)
     const [numberOfItemsInCart, setNumberOfItemsInCart] = useState(0)
     const [itemsInCart, setItemsInCart] = useState([])
+    const [selectedItem, setSelectedItem] = useState(null)
 
 useEffect (()=> {
     fetch(data)
@@ -15,17 +16,21 @@ useEffect (()=> {
 },[])
 
 return (
-    <div className="flex font-custom bg-rose-50 justify-around overflow-scroll">
+    <div className="flex font-custom bg-rose-50 justify-evenly overflow-scroll">
         <Dessert 
         data={allData}
         numberOfItemsInCart={numberOfItemsInCart} 
         setNumberOfItemsInCart={setNumberOfItemsInCart}
         itemsInCart={itemsInCart}
         setItemsInCart={setItemsInCart}
+        selectedItem={selectedItem}
+        setSelectedItem={setSelectedItem}
         />
         <ShoppingCart 
         numberOfItemsInCart={numberOfItemsInCart} 
-        setNumberOfItemsInCart={setNumberOfItemsInCart} />
+        setNumberOfItemsInCart={setNumberOfItemsInCart} 
+        itemsInCart={itemsInCart}
+        />
     </div>
     )
 
