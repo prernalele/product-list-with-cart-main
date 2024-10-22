@@ -28,8 +28,6 @@ const Dessert = ({data,
                 setNumberOfItemsInCart={setNumberOfItemsInCart}
                 itemsInCart={itemsInCart}
                 setItemsInCart={setItemsInCart}
-                selectedItem={selectedItem}
-                setSelectedItem={setSelectedItem}
                 />
             )})}
             </div>

@@ -7,7 +7,6 @@ const  App = () => {
     const [allData, setAllData] = useState(null)
     const [numberOfItemsInCart, setNumberOfItemsInCart] = useState(0)
     const [itemsInCart, setItemsInCart] = useState([])
-    const [selectedItem, setSelectedItem] = useState(null)
 
 useEffect (()=> {
     fetch(data)
@@ -23,8 +22,6 @@ return (
         setNumberOfItemsInCart={setNumberOfItemsInCart}
         itemsInCart={itemsInCart}
         setItemsInCart={setItemsInCart}
-        selectedItem={selectedItem}
-        setSelectedItem={setSelectedItem}
         />
         <ShoppingCart 
         numberOfItemsInCart={numberOfItemsInCart} 
