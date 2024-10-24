@@ -8,9 +8,15 @@ const  App = () => {
     const [numberOfItemsInCart, setNumberOfItemsInCart] = useState(0)
     const [itemsInCart, setItemsInCart] = useState([])
 
+    // assigning ID for each dessert data
+    const dataWithId = data.map((datum, index) => {
+        return {...datum, ["id"] : index+1, ["itemQuantity"]: 1}} )
+    console.log("dataWithId", dataWithId)
+
+    // fetching the data with Id
 useEffect (()=> {
-    fetch(data)
-    .then(setAllData(data))
+    fetch(dataWithId)
+    .then(setAllData(dataWithId))
     .catch((error) => console.log("Error fetching data", error));
 },[])
 

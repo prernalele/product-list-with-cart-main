@@ -4,53 +4,66 @@ import incrementIcon from '../../static/assets/images/icon-increment-quantity.sv
 import decrementIcon from '../../static/assets/images/icon-remove-item.svg'
 
 const EachDessertCard = ( {
-                        key,
+                        id,
                         image, 
                         name, 
                         price, 
                         category,
+                        itemQuantity,
                         numberOfItemsInCart,
                         setNumberOfItemsInCart,
                         itemsInCart,
                         setItemsInCart,
-                    }) => {
-
+                    }) => {                  
     const addToCartClickHandler = (e) => {
+        console.log("e", e.target.id)
         setNumberOfItemsInCart((prev) => prev+1)
         const newItemToAppend = {
+            id:id,
             itemName: name,
             itemPrice: price,
+            itemQuantity: itemQuantity,
         }
-        setItemsInCart((prevItems) => [...prevItems,newItemToAppend])
+        setItemsInCart((prevItems) => {
+            // look if the item is present in prevItems
+            // if it is present, find it , update the quantity of it
+            // return all the previous items along with updated one
+            // if it is NOT present, that means it's a new item to append
+            // use spread operator to return it with already existing or the prevItems
+            const itemExists = prevItems.find((items) => items.id === newItemToAppend.id)
+            
+            return [...prevItems, newItemToAppend]
+        })
         
     }
 
     const removeFromCartClickHandler = (e) => {
-        console.log("e", e)
+        console.log("e", e.target.id)
         setNumberOfItemsInCart((prev) => prev-1)
     }
 
     const {desktop, mobile, tablet, thumbnail} = image
 return (
-    <div key= {key} className="flex flex-col mx-4 mb-20 font-redhat">
+    <div key= {id} className="flex flex-col mx-4 mb-20 font-redhat">
 
         <img className="size-52 -my-5 group-hover:outline-customRed" src={desktop} alt="picture of a ${name}"/>
         <div role="button" 
-            className="flex flex-row h-10 group w-40 rounded-full bg-slate-50 
+            className="flex flex-row h-12 group w-40 rounded-full bg-slate-50 
             hover:bg-customRed">
 
-            <div className="flex pt-2 mt-0.5 ml-6 justify-center absolute">
+            <div className="flex pt-2 ml-6 justify-center align-center">
                 <img className="flex size-5 group-hover:hidden" src={iconAddToCart} />
                 <p className="flex text-center font-redhat font-semibold
                 group-hover:hidden">Add to Cart</p> 
             </div>
             
 
-            <div className="flex flex-row ml-14 mt-2 justify-center">
+            <div className="flex flex-row ml-14 mt-2 justify-center relative z:2">
                 <img role="button" className="hidden group-hover:flex size-3 mx-1 mt-1" 
+                    
                     onClick={(e) =>addToCartClickHandler(e)}  
                     src={incrementIcon} />
-                <p className="hidden group-hover:flex px-1">{numberOfItemsInCart}</p>
+                <p className="hidden group-hover:flex px-1"></p>
                 <img className="hidden group-hover:flex size-3 mx-1 mt-1" 
                     onClick={(e) =>removeFromCartClickHandler(e)}
                     src={decrementIcon} />

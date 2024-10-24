@@ -667,12 +667,8 @@ video {
   }
 }
 
-.invisible {
-  visibility: hidden;
-}
-
-.absolute {
-  position: absolute;
+.relative {
+  position: relative;
 }
 
 .-my-5 {
@@ -680,14 +676,14 @@ video {
   margin-bottom: -1.25rem;
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .mb-20 {
@@ -700,6 +696,10 @@ video {
 
 .ml-0 {
   margin-left: 0px;
+}
+
+.ml-14 {
+  margin-left: 3.5rem;
 }
 
 .ml-20 {
@@ -718,12 +718,16 @@ video {
   margin-right: 10rem;
 }
 
-.mt-0\.5 {
-  margin-top: 0.125rem;
+.mt-1 {
+  margin-top: 0.25rem;
 }
 
 .mt-10 {
   margin-top: 2.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .mt-4 {
@@ -732,38 +736,6 @@ video {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.ml-5 {
-  margin-left: 1.25rem;
-}
-
-.ml-10 {
-  margin-left: 2.5rem;
-}
-
-.ml-8 {
-  margin-left: 2rem;
-}
-
-.ml-9 {
-  margin-left: 2.25rem;
-}
-
-.ml-12 {
-  margin-left: 3rem;
-}
-
-.ml-14 {
-  margin-left: 3.5rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.mt-1 {
-  margin-top: 0.25rem;
 }
 
 .flex {
@@ -776,6 +748,11 @@ video {
   display: none;
 }
 
+.size-3 {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
 .size-5 {
   width: 1.25rem;
   height: 1.25rem;
@@ -786,23 +763,8 @@ video {
   height: 13rem;
 }
 
-.size-7 {
-  width: 1.75rem;
-  height: 1.75rem;
-}
-
-.size-10 {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-.size-3 {
-  width: 0.75rem;
-  height: 0.75rem;
-}
-
-.h-10 {
-  height: 2.5rem;
+.h-12 {
+  height: 3rem;
 }
 
 .h-80 {
@@ -819,12 +781,6 @@ video {
 
 .w-80 {
   width: 20rem;
-}
-
-.flex-grow {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
 }
 
 .flex-row {
@@ -852,11 +808,6 @@ video {
           justify-content: center;
 }
 
-.justify-around {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
 .justify-evenly {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -879,11 +830,6 @@ video {
 .bg-slate-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .px-1 {
@@ -952,18 +898,6 @@ video {
 .hover\:bg-customRed:hover {
   --tw-bg-opacity: 1;
   background-color: hsl(14 86% 42% / var(--tw-bg-opacity));
-}
-
-.group:hover .group-hover\:visible {
-  visibility: visible;
-}
-
-.group:hover .group-hover\:invisible {
-  visibility: hidden;
-}
-
-.group:hover .group-hover\:inline {
-  display: inline;
 }
 
 .group:hover .group-hover\:flex {
