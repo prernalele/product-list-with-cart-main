@@ -10,31 +10,41 @@ const EachDessertCard = ( {
                         price, 
                         category,
                         itemQuantity,
+                        data,
                         numberOfItemsInCart,
                         setNumberOfItemsInCart,
                         itemsInCart,
                         setItemsInCart,
                     }) => {                  
     const addToCartClickHandler = (e) => {
-        console.log("e", e.target.id)
+        console.log("e.target.id", e.target.id)
+        const userSelectedItemId = e.target.id
+        console.log("data in each dessert component", data)
+        console.log("userSelectedData", data?.find((dataItem) => dataItem.id == userSelectedItemId))
+        const userSelectedItem = data?.find((dataItem) => dataItem.id == userSelectedItemId)
         setNumberOfItemsInCart((prev) => prev+1)
-        const newItemToAppend = {
+       /* const newItemToAppend = {
             id:id,
             itemName: name,
             itemPrice: price,
             itemQuantity: itemQuantity ,
-        }   
+        }   */
         setItemsInCart((prevItems) => {
-            if(prevItems.length === 0) {
-                return [newItemToAppend]      
+            const isItemAlreadyPresent = prevItems.find((item) => item.id == userSelectedItemId )
+            if(prevItems.length !== 0 && isItemAlreadyPresent) {
+                const updatedItemList = prevItems.map((item) => {
+                    if(item.id == userSelectedItemId) {
+                        return { ...item, itemQuantity: item.itemQuantity+1 }
+                    }
+                    return item
+                })
+                console.log("updatedItemList", updatedItemList)
+                return updatedItemList   
             }
-            const updatedItem = prevItems.map((item) => {
-                if(item.id === newItemToAppend.id) {
-                    return { ...item, itemQuantity: item.itemQuantity+1 }
-                }
-                item
-            })
-            return updatedItem     
+            /*if (prevItems.length !== 0 ) {
+                return [...prevItems, userSelectedItem]
+            }*/
+            return (prevItems?.length>0 ? [ ...prevItems,userSelectedItem]: [userSelectedItem])      
         })
         
     }
@@ -61,8 +71,8 @@ return (
 
             <div className="flex flex-row ml-14 mt-2 justify-center relative z:2">
                 <img role="button" className="hidden group-hover:flex size-3 mx-1 mt-1" 
-                    
-                    onClick={(e) =>addToCartClickHandler(e)}  
+                    id={id}
+                    onClick={addToCartClickHandler}  
                     src={incrementIcon} />
                 <p className="hidden group-hover:flex px-1"></p>
                 <img className="hidden group-hover:flex size-3 mx-1 mt-1" 

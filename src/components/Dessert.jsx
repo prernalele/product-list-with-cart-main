@@ -21,12 +21,14 @@ const Dessert = ({data,
 
             return (
                 <EachDessertCard 
+                key={index}
                 id={id}
                 image={image}
                 name={name}
                 price={price}
                 category={category}
                 itemQuantity={itemQuantity}
+                data={data}
                 numberOfItemsInCart={numberOfItemsInCart} 
                 setNumberOfItemsInCart={setNumberOfItemsInCart}
                 itemsInCart={itemsInCart}
