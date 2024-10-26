@@ -27443,35 +27443,35 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 role: "button",
-                className: "flex flex-row h-12 group w-40 rounded-full bg-slate-50  hover:bg-customRed",
+                className: " ml-6 h-12 group w-40 rounded-full bg-slate-50  hover:bg-customRed",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "flex pt-2 ml-6 justify-center align-center",
+                        className: "flex pt-2  group-hover:hidden  justify-center align-center",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: "flex size-5 group-hover:hidden",
+                                className: " size-8 ",
                                 src: (0, _iconAddToCartSvgDefault.default)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 66,
+                                lineNumber: 65,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "flex text-center font-redhat font-semibold group-hover:hidden",
+                                className: "text-center font-redhat font-semibold  ",
                                 children: "Add to Cart"
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 67,
+                                lineNumber: 66,
                                 columnNumber: 17
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 65,
+                        lineNumber: 64,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "flex flex-row ml-14 mt-2 justify-center relative z:2",
+                        className: "flex flex-row  mt-3 justify-center relative z:2",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                                 role: "button",
@@ -27481,14 +27481,14 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                                 src: (0, _iconIncrementQuantitySvgDefault.default)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 73,
+                                lineNumber: 72,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 className: "hidden group-hover:flex px-1"
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 77,
+                                lineNumber: 76,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -27497,13 +27497,13 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                                 src: (0, _iconRemoveItemSvgDefault.default)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 78,
+                                lineNumber: 77,
                                 columnNumber: 17
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 72,
+                        lineNumber: 71,
                         columnNumber: 13
                     }, undefined)
                 ]
@@ -27519,7 +27519,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                         children: category
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 87,
+                        lineNumber: 86,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27527,7 +27527,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                         children: name
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 88,
+                        lineNumber: 87,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27538,13 +27538,13 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 89,
+                        lineNumber: 88,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 86,
+                lineNumber: 85,
                 columnNumber: 9
             }, undefined)
         ]
@@ -27848,7 +27848,7 @@ $RefreshReg$(_c, "ShoppingCart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../static/assets/images/illustration-empty-cart.svg":"lFnix","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./DisplayItemsAddedToCart":"fXx5p"}],"lFnix":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../static/assets/images/illustration-empty-cart.svg":"lFnix","./DisplayItemsAddedToCart":"fXx5p","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lFnix":[function(require,module,exports) {
 module.exports = require("6c81ccf711b2fdbd").getBundleURL("bLxZJ") + "illustration-empty-cart.18fe53b8.svg" + "?" + Date.now();
 
 },{"6c81ccf711b2fdbd":"lgJ39"}],"fXx5p":[function(require,module,exports) {

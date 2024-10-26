@@ -58,18 +58,17 @@ return (
     <div key={id} className="flex flex-col mx-4 mb-20 font-redhat">
 
         <img className="size-52 -my-5 group-hover:outline-customRed" src={desktop} alt="picture of a ${name}"/>
-        <div role="button" 
-            className="flex flex-row h-12 group w-40 rounded-full bg-slate-50 
+        <div role="button" className=" ml-6 h-12 group w-40 rounded-full bg-slate-50 
             hover:bg-customRed">
 
-            <div className="flex pt-2 ml-6 justify-center align-center">
-                <img className="flex size-5 group-hover:hidden" src={iconAddToCart} />
-                <p className="flex text-center font-redhat font-semibold
-                group-hover:hidden">Add to Cart</p> 
+            <div className="flex pt-2  group-hover:hidden  justify-center align-center">
+                <img className=" size-8 " src={iconAddToCart} />
+                <p className="text-center font-redhat font-semibold 
+                ">Add to Cart</p> 
             </div>
             
 
-            <div className="flex flex-row ml-14 mt-2 justify-center relative z:2">
+            <div className="flex flex-row  mt-3 justify-center relative z:2">
                 <img role="button" className="hidden group-hover:flex size-3 mx-1 mt-1" 
                     id={id}
                     onClick={addToCartClickHandler}  
