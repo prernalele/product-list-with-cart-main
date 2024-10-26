@@ -22,29 +22,30 @@ const EachDessertCard = ( {
             id:id,
             itemName: name,
             itemPrice: price,
-            itemQuantity: itemQuantity,
-        }
+            itemQuantity: itemQuantity ,
+        }   
         setItemsInCart((prevItems) => {
-            // look if the item is present in prevItems
-            // if it is present, find it , update the quantity of it
-            // return all the previous items along with updated one
-            // if it is NOT present, that means it's a new item to append
-            // use spread operator to return it with already existing or the prevItems
-            const itemExists = prevItems.find((items) => items.id === newItemToAppend.id)
-            
-            return [...prevItems, newItemToAppend]
+            if(prevItems.length === 0) {
+                return [newItemToAppend]      
+            }
+            const updatedItem = prevItems.map((item) => {
+                if(item.id === newItemToAppend.id) {
+                    return { ...item, itemQuantity: item.itemQuantity+1 }
+                }
+                item
+            })
+            return updatedItem     
         })
         
     }
 
     const removeFromCartClickHandler = (e) => {
-        console.log("e", e.target.id)
         setNumberOfItemsInCart((prev) => prev-1)
     }
 
     const {desktop, mobile, tablet, thumbnail} = image
 return (
-    <div key= {id} className="flex flex-col mx-4 mb-20 font-redhat">
+    <div key={id} className="flex flex-col mx-4 mb-20 font-redhat">
 
         <img className="size-52 -my-5 group-hover:outline-customRed" src={desktop} alt="picture of a ${name}"/>
         <div role="button" 

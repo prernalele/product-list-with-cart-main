@@ -27399,20 +27399,20 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, numbe
             itemQuantity: itemQuantity
         };
         setItemsInCart((prevItems)=>{
-            // look if the item is present in prevItems
-            // if it is present, find it , update the quantity of it
-            // return all the previous items along with updated one
-            // if it is NOT present, that means it's a new item to append
-            // use spread operator to return it with already existing or the prevItems
-            const itemExists = prevItems.find((items)=>items.id === newItemToAppend.id);
-            return [
-                ...prevItems,
+            if (prevItems.length === 0) return [
                 newItemToAppend
             ];
+            const updatedItem = prevItems.map((item)=>{
+                if (item.id === newItemToAppend.id) return {
+                    ...item,
+                    itemQuantity: item.itemQuantity + 1
+                };
+                item;
+            });
+            return updatedItem;
         });
     };
     const removeFromCartClickHandler = (e)=>{
-        console.log("e", e.target.id);
         setNumberOfItemsInCart((prev)=>prev - 1);
     };
     const { desktop, mobile, tablet, thumbnail } = image;
@@ -27425,7 +27425,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, numbe
                 alt: "picture of a ${name}"
             }, void 0, false, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 49,
+                lineNumber: 50,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27440,7 +27440,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, numbe
                                 src: (0, _iconAddToCartSvgDefault.default)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 55,
+                                lineNumber: 56,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27448,13 +27448,13 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, numbe
                                 children: "Add to Cart"
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 56,
+                                lineNumber: 57,
                                 columnNumber: 17
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 54,
+                        lineNumber: 55,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27467,14 +27467,14 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, numbe
                                 src: (0, _iconIncrementQuantitySvgDefault.default)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 62,
+                                lineNumber: 63,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 className: "hidden group-hover:flex px-1"
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 66,
+                                lineNumber: 67,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -27483,19 +27483,19 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, numbe
                                 src: (0, _iconRemoveItemSvgDefault.default)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 67,
+                                lineNumber: 68,
                                 columnNumber: 17
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 61,
+                        lineNumber: 62,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 50,
+                lineNumber: 51,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27505,7 +27505,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, numbe
                         children: category
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 76,
+                        lineNumber: 77,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27513,7 +27513,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, numbe
                         children: name
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 77,
+                        lineNumber: 78,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27524,19 +27524,19 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, numbe
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 78,
+                        lineNumber: 79,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 75,
+                lineNumber: 76,
                 columnNumber: 9
             }, undefined)
         ]
     }, id, true, {
         fileName: "src/components/EachDessertCard.jsx",
-        lineNumber: 47,
+        lineNumber: 48,
         columnNumber: 5
     }, undefined);
 };
