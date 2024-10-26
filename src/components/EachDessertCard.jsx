@@ -17,9 +17,7 @@ const EachDessertCard = ( {
                         setItemsInCart,
                     }) => {                  
     const addToCartClickHandler = (e) => {
-        console.log("e.target.id", e.target.id)
         const userSelectedItemId = e.target.id
-        console.log("userSelectedData", data?.find((dataItem) => dataItem.id == userSelectedItemId))
         const userSelectedItem = data?.find((dataItem) => dataItem.id == userSelectedItemId)
         setNumberOfItemsInCart((prev) => prev+1)
         setItemsInCart((prevItems) => {
@@ -46,7 +44,7 @@ const EachDessertCard = ( {
         setNumberOfItemsInCart((prev) => prev-1)
         console.log("e.target.id", e.target.id)
         const userSelectedItemId = e.target.id
-        const userSelectedItem = data?.find((dataItem) => dataItem.id == userSelectedItemId)
+        // const userSelectedItem = data?.find((dataItem) => dataItem.id == userSelectedItemId)
         setItemsInCart((prevItems) => {
             const isItemAlreadyPresent = prevItems.find((item) => item.id == userSelectedItemId )
             if(prevItems.length !== 0 && isItemAlreadyPresent) {
@@ -56,7 +54,6 @@ const EachDessertCard = ( {
                     }
                     return item
                 })
-                console.log("updatedItemList decrement", updatedItemList)
                 return updatedItemList   
             }
             /*if (prevItems.length !== 0 ) {

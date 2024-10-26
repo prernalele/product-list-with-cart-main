@@ -27391,9 +27391,7 @@ var _iconRemoveItemSvg = require("../../static/assets/images/icon-remove-item.sv
 var _iconRemoveItemSvgDefault = parcelHelpers.interopDefault(_iconRemoveItemSvg);
 const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart })=>{
     const addToCartClickHandler = (e)=>{
-        console.log("e.target.id", e.target.id);
         const userSelectedItemId = e.target.id;
-        console.log("userSelectedData", data?.find((dataItem)=>dataItem.id == userSelectedItemId));
         const userSelectedItem = data?.find((dataItem)=>dataItem.id == userSelectedItemId);
         setNumberOfItemsInCart((prev)=>prev + 1);
         setItemsInCart((prevItems)=>{
@@ -27423,7 +27421,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
         setNumberOfItemsInCart((prev)=>prev - 1);
         console.log("e.target.id", e.target.id);
         const userSelectedItemId = e.target.id;
-        const userSelectedItem = data?.find((dataItem)=>dataItem.id == userSelectedItemId);
+        // const userSelectedItem = data?.find((dataItem) => dataItem.id == userSelectedItemId)
         setItemsInCart((prevItems)=>{
             const isItemAlreadyPresent = prevItems.find((item)=>item.id == userSelectedItemId);
             if (prevItems.length !== 0 && isItemAlreadyPresent) {
@@ -27434,7 +27432,6 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                     };
                     return item;
                 });
-                console.log("updatedItemList decrement", updatedItemList);
                 return updatedItemList;
             }
             /*if (prevItems.length !== 0 ) {
@@ -27454,7 +27451,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                 alt: "picture of a ${name}"
             }, void 0, false, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 73,
+                lineNumber: 70,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27469,7 +27466,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                                 src: (0, _iconAddToCartSvgDefault.default)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 78,
+                                lineNumber: 75,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27477,13 +27474,13 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                                 children: "Add to Cart"
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 79,
+                                lineNumber: 76,
                                 columnNumber: 17
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 77,
+                        lineNumber: 74,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27497,14 +27494,14 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                                 src: (0, _iconIncrementQuantitySvgDefault.default)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 85,
+                                lineNumber: 82,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 className: "hidden group-hover:flex px-1"
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 89,
+                                lineNumber: 86,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -27514,19 +27511,19 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                                 src: (0, _iconRemoveItemSvgDefault.default)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 90,
+                                lineNumber: 87,
                                 columnNumber: 17
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 84,
+                        lineNumber: 81,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 74,
+                lineNumber: 71,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27536,7 +27533,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                         children: category
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 100,
+                        lineNumber: 97,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27544,7 +27541,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                         children: name
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 101,
+                        lineNumber: 98,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27555,19 +27552,19 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 102,
+                        lineNumber: 99,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 99,
+                lineNumber: 96,
                 columnNumber: 9
             }, undefined)
         ]
     }, id, true, {
         fileName: "src/components/EachDessertCard.jsx",
-        lineNumber: 71,
+        lineNumber: 68,
         columnNumber: 5
     }, undefined);
 };
