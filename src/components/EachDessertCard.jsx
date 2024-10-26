@@ -19,16 +19,9 @@ const EachDessertCard = ( {
     const addToCartClickHandler = (e) => {
         console.log("e.target.id", e.target.id)
         const userSelectedItemId = e.target.id
-        console.log("data in each dessert component", data)
         console.log("userSelectedData", data?.find((dataItem) => dataItem.id == userSelectedItemId))
         const userSelectedItem = data?.find((dataItem) => dataItem.id == userSelectedItemId)
         setNumberOfItemsInCart((prev) => prev+1)
-       /* const newItemToAppend = {
-            id:id,
-            itemName: name,
-            itemPrice: price,
-            itemQuantity: itemQuantity ,
-        }   */
         setItemsInCart((prevItems) => {
             const isItemAlreadyPresent = prevItems.find((item) => item.id == userSelectedItemId )
             if(prevItems.length !== 0 && isItemAlreadyPresent) {
@@ -51,6 +44,26 @@ const EachDessertCard = ( {
 
     const removeFromCartClickHandler = (e) => {
         setNumberOfItemsInCart((prev) => prev-1)
+        console.log("e.target.id", e.target.id)
+        const userSelectedItemId = e.target.id
+        const userSelectedItem = data?.find((dataItem) => dataItem.id == userSelectedItemId)
+        setItemsInCart((prevItems) => {
+            const isItemAlreadyPresent = prevItems.find((item) => item.id == userSelectedItemId )
+            if(prevItems.length !== 0 && isItemAlreadyPresent) {
+                const updatedItemList = prevItems.map((item) => {
+                    if(item.id == userSelectedItemId) {
+                        return { ...item, itemQuantity: item.itemQuantity>0 ? item.itemQuantity-1 : 0 }
+                    }
+                    return item
+                })
+                console.log("updatedItemList decrement", updatedItemList)
+                return updatedItemList   
+            }
+            /*if (prevItems.length !== 0 ) {
+                return [...prevItems, userSelectedItem]
+            }*/
+            return (prevItems?.length>0 && !isItemAlreadyPresent &&  [...prevItems])      
+        })
     }
 
     const {desktop, mobile, tablet, thumbnail} = image
@@ -75,7 +88,8 @@ return (
                     src={incrementIcon} />
                 <p className="hidden group-hover:flex px-1"></p>
                 <img className="hidden group-hover:flex size-3 mx-1 mt-1" 
-                    onClick={(e) =>removeFromCartClickHandler(e)}
+                    id={id}
+                    onClick={removeFromCartClickHandler}
                     src={decrementIcon} />
             </div>
             
