@@ -63,6 +63,11 @@ const EachDessertCard = ( {
         })
     }
 
+
+    const quantityForEachDessert = () => {
+    const foundTheCurrentItem =itemsInCart.find((item)=> item.id === id)
+    return foundTheCurrentItem?.itemQuantity ? foundTheCurrentItem.itemQuantity : 0
+    }
     const {desktop, mobile, tablet, thumbnail} = image
 return (
     <div key={id} className="flex flex-col mx-4 mb-20 font-redhat">
@@ -78,13 +83,13 @@ return (
             </div>
             
 
-            <div className="flex flex-row  mt-3 justify-center relative z:2">
-                <img role="button" className="hidden group-hover:flex size-3 mx-1 mt-1" 
+            <div className="hidden group-hover:flex  mt-3 justify-center">
+                <img role="button" className=" size-3 mx-1 mt-1" 
                     id={id}
                     onClick={addToCartClickHandler}  
                     src={incrementIcon} />
-                <p className="hidden group-hover:flex px-1"></p>
-                <img className="hidden group-hover:flex size-3 mx-1 mt-1" 
+                <p id={id} className="px-1 ">{quantityForEachDessert()}</p>
+                <img className="size-3 mx-1 mt-1" 
                     id={id}
                     onClick={removeFromCartClickHandler}
                     src={decrementIcon} />

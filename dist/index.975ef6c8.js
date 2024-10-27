@@ -27441,6 +27441,10 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
             ];
         });
     };
+    const quantityForEachDessert = ()=>{
+        const foundTheCurrentItem = itemsInCart.find((item)=>item.id === id);
+        return foundTheCurrentItem?.itemQuantity ? foundTheCurrentItem.itemQuantity : 0;
+    };
     const { desktop, mobile, tablet, thumbnail } = image;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex flex-col mx-4 mb-20 font-redhat",
@@ -27451,7 +27455,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                 alt: "picture of a ${name}"
             }, void 0, false, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 70,
+                lineNumber: 75,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27466,7 +27470,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                                 src: (0, _iconAddToCartSvgDefault.default)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 75,
+                                lineNumber: 80,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27474,56 +27478,58 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                                 children: "Add to Cart"
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 76,
+                                lineNumber: 81,
                                 columnNumber: 17
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 74,
+                        lineNumber: 79,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "flex flex-row  mt-3 justify-center relative z:2",
+                        className: "hidden group-hover:flex  mt-3 justify-center",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                                 role: "button",
-                                className: "hidden group-hover:flex size-3 mx-1 mt-1",
+                                className: " size-3 mx-1 mt-1",
                                 id: id,
                                 onClick: addToCartClickHandler,
                                 src: (0, _iconIncrementQuantitySvgDefault.default)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 82,
+                                lineNumber: 87,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "hidden group-hover:flex px-1"
+                                id: id,
+                                className: "px-1 ",
+                                children: quantityForEachDessert()
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 86,
+                                lineNumber: 91,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: "hidden group-hover:flex size-3 mx-1 mt-1",
+                                className: "size-3 mx-1 mt-1",
                                 id: id,
                                 onClick: removeFromCartClickHandler,
                                 src: (0, _iconRemoveItemSvgDefault.default)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 87,
+                                lineNumber: 92,
                                 columnNumber: 17
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 81,
+                        lineNumber: 86,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 71,
+                lineNumber: 76,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27533,7 +27539,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                         children: category
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 97,
+                        lineNumber: 102,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27541,7 +27547,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                         children: name
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 98,
+                        lineNumber: 103,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27552,19 +27558,19 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 99,
+                        lineNumber: 104,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 96,
+                lineNumber: 101,
                 columnNumber: 9
             }, undefined)
         ]
     }, id, true, {
         fileName: "src/components/EachDessertCard.jsx",
-        lineNumber: 68,
+        lineNumber: 73,
         columnNumber: 5
     }, undefined);
 };
