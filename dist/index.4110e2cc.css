@@ -509,6 +509,11 @@ img, video {
   color: rgb(127 29 29 / var(--tw-text-opacity));
 }
 
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 @font-face {
   font-family: custom;
   src: url("RedHatText-VariableFont_wght.79aa744d.ttf") format("truetype");
@@ -516,9 +521,23 @@ img, video {
   font-style: normal;
 }
 
+.hover\:rounded-lg:hover {
+  border-radius: .5rem;
+}
+
 .hover\:bg-customRed:hover {
   --tw-bg-opacity: 1;
   background-color: hsl(14 86% 42% / var(--tw-bg-opacity));
+}
+
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:text-customRed:hover {
+  --tw-text-opacity: 1;
+  color: hsl(14 86% 42% / var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:flex {

@@ -1,9 +1,27 @@
 import React from "react";
 
 const DisplayItemsAddedToCart  = ({itemsInCart}) => {
-    console.log("items in cart in SC", itemsInCart)
+    const totalPriceThisItem = (itemQuantity, price) => {
+        return itemQuantity*price
+
+    }
     return (
-        <p></p>
+        <div>
+            {itemsInCart.map((item, index)=> {
+                console.log("item", )
+                const {name, itemQuantity, price} = item
+                console.log("itemQuantity", itemQuantity)
+                return(
+                    <>
+                    <p>{name}</p>
+                    <p>{itemQuantity}</p>
+                    <span>{price}</span>
+                    <span>{totalPriceThisItem(itemQuantity, price)}</span>
+                    </>
+
+                )
+            })}
+        </div>
     )
 
 }

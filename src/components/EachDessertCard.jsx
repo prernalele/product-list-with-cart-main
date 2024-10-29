@@ -1,7 +1,7 @@
 import React from "react";
 import iconAddToCart from "../../static/assets/images/icon-add-to-cart.svg"
 import incrementIcon from '../../static/assets/images/icon-increment-quantity.svg'
-import decrementIcon from '../../static/assets/images/icon-remove-item.svg'
+import decrementIcon from '../../static/assets/images/icon-decrement-quantity.svg'
 
 const EachDessertCard = ( {
                         id,
@@ -83,16 +83,16 @@ return (
             </div>
             
 
-            <div className="hidden group-hover:flex  mt-3 justify-center">
+            <div className="hidden group-hover:flex  mt-3 justify-evenly">
+                <img className="size-3 mx-1 mt-1 hover:bg-white hover:text-customRed hover:rounded-lg" 
+                    id={id}
+                    onClick={removeFromCartClickHandler}
+                    src={decrementIcon} />
+                <p id={id} className="px-1 text-white">{quantityForEachDessert()}</p>
                 <img role="button" className=" size-3 mx-1 mt-1" 
                     id={id}
                     onClick={addToCartClickHandler}  
                     src={incrementIcon} />
-                <p id={id} className="px-1 ">{quantityForEachDessert()}</p>
-                <img className="size-3 mx-1 mt-1" 
-                    id={id}
-                    onClick={removeFromCartClickHandler}
-                    src={decrementIcon} />
             </div>
             
             
