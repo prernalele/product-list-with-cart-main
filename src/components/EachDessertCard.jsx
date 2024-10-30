@@ -1,6 +1,6 @@
 import React from "react";
 import iconAddToCart from "../../static/assets/images/icon-add-to-cart.svg"
-import incrementIcon from '../../static/assets/images/icon-increment-quantity.svg'
+import  incrementIcon from '../../static/assets/images/icon-increment-quantity.svg'
 import decrementIcon from '../../static/assets/images/icon-decrement-quantity.svg'
 
 const EachDessertCard = ( {
@@ -84,15 +84,23 @@ return (
             
 
             <div className="hidden group-hover:flex  mt-3 justify-evenly">
-                <img className="size-3 mx-1 mt-1 hover:bg-white hover:text-customRed hover:rounded-lg" 
-                    id={id}
+                <svg id={id}
+                    className="size-3 mx-1 mt-1 fill-current group-hover:text-white hover:bg-white hover:rounded-lg hover:!text-customRed"
                     onClick={removeFromCartClickHandler}
-                    src={decrementIcon} />
+                    xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2">
+                    <path d="M0 .375h10v1.25H0V.375Z"/>
+                </svg>
+
                 <p id={id} className="px-1 text-white">{quantityForEachDessert()}</p>
-                <img role="button" className=" size-3 mx-1 mt-1" 
-                    id={id}
-                    onClick={addToCartClickHandler}  
-                    src={incrementIcon} />
+
+                <svg className="size-3 mx-2  mt-1 fill-current group-hover:text-white hover:bg-white hover:rounded-lg hover:!text-customRed " 
+                    id={id }
+                    onClick={addToCartClickHandler} 
+                    xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10">
+                    <path  d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/>
+                </svg>
+
+
             </div>
             
             

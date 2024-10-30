@@ -13,6 +13,9 @@ module.exports = {
         redhat: ['"Red Hat Text"', 'sans-serif'],
       },
     },
+    variants: {
+      fill: ['hover', 'focus'], // this line does the trick
+    },
   },
   plugins: [],
 }

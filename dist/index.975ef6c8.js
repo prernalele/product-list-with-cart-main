@@ -27490,11 +27490,22 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "hidden group-hover:flex  mt-3 justify-evenly",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: "size-3 mx-1 mt-1 hover:bg-white hover:text-customRed hover:rounded-lg",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
                                 id: id,
+                                className: "size-3 mx-1 mt-1 fill-current group-hover:text-white hover:bg-white hover:rounded-lg hover:!text-customRed",
                                 onClick: removeFromCartClickHandler,
-                                src: (0, _iconDecrementQuantitySvgDefault.default)
+                                xmlns: "http://www.w3.org/2000/svg",
+                                width: "10",
+                                height: "2",
+                                fill: "none",
+                                viewBox: "0 0 10 2",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                    d: "M0 .375h10v1.25H0V.375Z"
+                                }, void 0, false, {
+                                    fileName: "src/components/EachDessertCard.jsx",
+                                    lineNumber: 91,
+                                    columnNumber: 21
+                                }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
                                 lineNumber: 87,
@@ -27506,18 +27517,28 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                                 children: quantityForEachDessert()
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 91,
+                                lineNumber: 94,
                                 columnNumber: 17
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                role: "button",
-                                className: " size-3 mx-1 mt-1",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+                                className: "size-3 mx-2  mt-1 fill-current group-hover:text-white hover:bg-white hover:rounded-lg hover:!text-customRed ",
                                 id: id,
                                 onClick: addToCartClickHandler,
-                                src: (0, _iconIncrementQuantitySvgDefault.default)
+                                xmlns: "http://www.w3.org/2000/svg",
+                                width: "10",
+                                height: "10",
+                                fill: "none",
+                                viewBox: "0 0 10 10",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                    d: "M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
+                                }, void 0, false, {
+                                    fileName: "src/components/EachDessertCard.jsx",
+                                    lineNumber: 100,
+                                    columnNumber: 21
+                                }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 92,
+                                lineNumber: 96,
                                 columnNumber: 17
                             }, undefined)
                         ]
@@ -27539,7 +27560,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                         children: category
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 102,
+                        lineNumber: 110,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27547,7 +27568,7 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                         children: name
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 103,
+                        lineNumber: 111,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27558,13 +27579,13 @@ const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data,
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 104,
+                        lineNumber: 112,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 101,
+                lineNumber: 109,
                 columnNumber: 9
             }, undefined)
         ]
@@ -27584,48 +27605,7 @@ $RefreshReg$(_c, "EachDessertCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../static/assets/images/icon-add-to-cart.svg":"5YGND","../../static/assets/images/icon-increment-quantity.svg":"8KFuV","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../static/assets/images/icon-decrement-quantity.svg":"8Zu1D"}],"5YGND":[function(require,module,exports) {
-module.exports = require("c60ad53a8ff81a4b").getBundleURL("bLxZJ") + "icon-add-to-cart.259b330e.svg" + "?" + Date.now();
-
-},{"c60ad53a8ff81a4b":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"8KFuV":[function(require,module,exports) {
-module.exports = require("21180b543f50665f").getBundleURL("bLxZJ") + "icon-increment-quantity.253c4397.svg" + "?" + Date.now();
-
-},{"21180b543f50665f":"lgJ39"}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../static/assets/images/icon-add-to-cart.svg":"5YGND","../../static/assets/images/icon-decrement-quantity.svg":"8Zu1D","../../static/assets/images/icon-increment-quantity.svg":"8KFuV"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27793,10 +27773,51 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"7422ead32dcc1e6b":"786KC"}],"8Zu1D":[function(require,module,exports) {
+},{"7422ead32dcc1e6b":"786KC"}],"5YGND":[function(require,module,exports) {
+module.exports = require("c60ad53a8ff81a4b").getBundleURL("bLxZJ") + "icon-add-to-cart.259b330e.svg" + "?" + Date.now();
+
+},{"c60ad53a8ff81a4b":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"8Zu1D":[function(require,module,exports) {
 module.exports = require("7308b9ef6d8d4556").getBundleURL("bLxZJ") + "icon-decrement-quantity.8c18a607.svg" + "?" + Date.now();
 
-},{"7308b9ef6d8d4556":"lgJ39"}],"4lJgb":[function(require,module,exports) {
+},{"7308b9ef6d8d4556":"lgJ39"}],"8KFuV":[function(require,module,exports) {
+module.exports = require("21180b543f50665f").getBundleURL("bLxZJ") + "icon-increment-quantity.253c4397.svg" + "?" + Date.now();
+
+},{"21180b543f50665f":"lgJ39"}],"4lJgb":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$65eb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
