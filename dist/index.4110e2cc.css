@@ -320,14 +320,14 @@ img, video {
   margin-right: .25rem;
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .mx-2 {
   margin-left: .5rem;
   margin-right: .5rem;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .mb-20 {
@@ -401,16 +401,6 @@ img, video {
   height: 2rem;
 }
 
-.size-2 {
-  width: .5rem;
-  height: .5rem;
-}
-
-.size-4 {
-  width: 1rem;
-  height: 1rem;
-}
-
 .h-12 {
   height: 3rem;
 }
@@ -461,10 +451,6 @@ img, video {
   border-radius: 9999px;
 }
 
-.rounded-lg {
-  border-radius: .5rem;
-}
-
 .bg-rose-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(255 241 242 / var(--tw-bg-opacity));
@@ -475,21 +461,8 @@ img, video {
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .fill-current {
   fill: currentColor;
-}
-
-.p-2 {
-  padding: .5rem;
-}
-
-.p-1 {
-  padding: .25rem;
 }
 
 .px-1 {
@@ -507,14 +480,6 @@ img, video {
 
 .pt-2 {
   padding-top: .5rem;
-}
-
-.pt-1 {
-  padding-top: .25rem;
-}
-
-.pl-1 {
-  padding-left: .25rem;
 }
 
 .text-center {
@@ -569,10 +534,6 @@ img, video {
   border-radius: .5rem;
 }
 
-.hover\:rounded-md:hover {
-  border-radius: .375rem;
-}
-
 .hover\:bg-customRed:hover {
   --tw-bg-opacity: 1;
   background-color: hsl(14 86% 42% / var(--tw-bg-opacity));
@@ -583,56 +544,9 @@ img, video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.hover\:fill-current:hover {
-  fill: currentColor;
-}
-
-.hover\:text-black:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.hover\:text-customRed:hover {
-  --tw-text-opacity: 1;
-  color: hsl(14 86% 42% / var(--tw-text-opacity));
-}
-
-.hover\:text-red-50:hover {
-  --tw-text-opacity: 1;
-  color: rgb(254 242 242 / var(--tw-text-opacity));
-}
-
 .hover\:\!text-customRed:hover {
   --tw-text-opacity: 1 !important;
   color: hsl(14 86% 42% / var(--tw-text-opacity)) !important;
-}
-
-.focus\:bg-white:focus {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.focus\:fill-current:focus {
-  fill: currentColor;
-}
-
-.focus\:text-customRed:focus {
-  --tw-text-opacity: 1;
-  color: hsl(14 86% 42% / var(--tw-text-opacity));
-}
-
-.active\:bg-white:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.active\:fill-current:active {
-  fill: currentColor;
-}
-
-.active\:text-customRed:active {
-  --tw-text-opacity: 1;
-  color: hsl(14 86% 42% / var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:flex {
@@ -643,23 +557,9 @@ img, video {
   display: none;
 }
 
-.group:hover .group-hover\:border-customRed {
-  --tw-border-opacity: 1;
-  border-color: hsl(14 86% 42% / var(--tw-border-opacity));
-}
-
-.group:hover .group-hover\:fill-current {
-  fill: currentColor;
-}
-
 .group:hover .group-hover\:text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.group:hover .group-hover\:text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:outline-customRed {
