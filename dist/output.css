@@ -52,7 +52,7 @@
   --tw-contain-style:  ;
 }
 
-::-webkit-backdrop {
+::-ms-backdrop {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
