@@ -10,8 +10,7 @@
     "build": " parcel build src/index.html --dist-dir docs"
   },
   "targets": {
-    "default": { 
-      "publicUrl": "./",   
+    "default": {   
       "sourceMap": false 
     }
   },
