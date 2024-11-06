@@ -27292,10 +27292,362 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../data.json":"cn6Iz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Dessert":"jgmu9","./components/ShoppingCart":"4lJgb"}],"cn6Iz":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../data.json":"cn6Iz","./components/Dessert":"jgmu9","./components/ShoppingCart":"4lJgb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cn6Iz":[function(require,module,exports) {
 module.exports = JSON.parse('[{"image":{"thumbnail":"./assets/images/image-waffle-thumbnail.jpg","mobile":"./assets/images/image-waffle-mobile.jpg","tablet":"./assets/images/image-waffle-tablet.jpg","desktop":"./assets/images/image-waffle-desktop.jpg"},"name":"Waffle with Berries","category":"Waffle","price":6.5},{"image":{"thumbnail":"./assets/images/image-creme-brulee-thumbnail.jpg","mobile":"./assets/images/image-creme-brulee-mobile.jpg","tablet":"./assets/images/image-creme-brulee-tablet.jpg","desktop":"./assets/images/image-creme-brulee-desktop.jpg"},"name":"Vanilla Bean Cr\xe8me Br\xfbl\xe9e","category":"Cr\xe8me Br\xfbl\xe9e","price":7},{"image":{"thumbnail":"./assets/images/image-macaron-thumbnail.jpg","mobile":"./assets/images/image-macaron-mobile.jpg","tablet":"./assets/images/image-macaron-tablet.jpg","desktop":"./assets/images/image-macaron-desktop.jpg"},"name":"Macaron Mix of Five","category":"Macaron","price":8},{"image":{"thumbnail":"./assets/images/image-tiramisu-thumbnail.jpg","mobile":"./assets/images/image-tiramisu-mobile.jpg","tablet":"./assets/images/image-tiramisu-tablet.jpg","desktop":"./assets/images/image-tiramisu-desktop.jpg"},"name":"Classic Tiramisu","category":"Tiramisu","price":5.5},{"image":{"thumbnail":"./assets/images/image-baklava-thumbnail.jpg","mobile":"./assets/images/image-baklava-mobile.jpg","tablet":"./assets/images/image-baklava-tablet.jpg","desktop":"./assets/images/image-baklava-desktop.jpg"},"name":"Pistachio Baklava","category":"Baklava","price":4},{"image":{"thumbnail":"./assets/images/image-meringue-thumbnail.jpg","mobile":"./assets/images/image-meringue-mobile.jpg","tablet":"./assets/images/image-meringue-tablet.jpg","desktop":"./assets/images/image-meringue-desktop.jpg"},"name":"Lemon Meringue Pie","category":"Pie","price":5},{"image":{"thumbnail":"./assets/images/image-cake-thumbnail.jpg","mobile":"./assets/images/image-cake-mobile.jpg","tablet":"./assets/images/image-cake-tablet.jpg","desktop":"./assets/images/image-cake-desktop.jpg"},"name":"Red Velvet Cake","category":"Cake","price":4.5},{"image":{"thumbnail":"./assets/images/image-brownie-thumbnail.jpg","mobile":"./assets/images/image-brownie-mobile.jpg","tablet":"./assets/images/image-brownie-tablet.jpg","desktop":"./assets/images/image-brownie-desktop.jpg"},"name":"Salted Caramel Brownie","category":"Brownie","price":4.5},{"image":{"thumbnail":"./assets/images/image-panna-cotta-thumbnail.jpg","mobile":"./assets/images/image-panna-cotta-mobile.jpg","tablet":"./assets/images/image-panna-cotta-tablet.jpg","desktop":"./assets/images/image-panna-cotta-desktop.jpg"},"name":"Vanilla Panna Cotta","category":"Panna Cotta","price":6.5}]');
 
-},{}],"gkKU3":[function(require,module,exports) {
+},{}],"jgmu9":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$246b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$246b.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _eachDessertCard = require("./EachDessertCard");
+var _eachDessertCardDefault = parcelHelpers.interopDefault(_eachDessertCard);
+const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart, selectedItem, setSelectedItem })=>{
+    const pageHeading = "Desserts";
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex flex-col ml-20 mt-6 h-screen",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "font-redhat mb-5 ml-4 text-lg font-bold",
+                children: [
+                    " ",
+                    pageHeading
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Dessert.jsx",
+                lineNumber: 15,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex flex-row flex-wrap ",
+                children: data?.map((eachItem, index)=>{
+                    const { id, image, name, price, category, itemQuantity } = eachItem;
+                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _eachDessertCardDefault.default), {
+                        id: id,
+                        image: image,
+                        name: name,
+                        price: price,
+                        category: category,
+                        itemQuantity: itemQuantity,
+                        data: data,
+                        numberOfItemsInCart: numberOfItemsInCart,
+                        setNumberOfItemsInCart: setNumberOfItemsInCart,
+                        itemsInCart: itemsInCart,
+                        setItemsInCart: setItemsInCart
+                    }, index, false, {
+                        fileName: "src/components/Dessert.jsx",
+                        lineNumber: 21,
+                        columnNumber: 17
+                    }, undefined);
+                })
+            }, void 0, false, {
+                fileName: "src/components/Dessert.jsx",
+                lineNumber: 16,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Dessert.jsx",
+        lineNumber: 14,
+        columnNumber: 9
+    }, undefined);
+};
+_c = Dessert;
+exports.default = Dessert;
+var _c;
+$RefreshReg$(_c, "Dessert");
+
+  $parcel$ReactRefreshHelpers$246b.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./EachDessertCard":"kQQlC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kQQlC":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$32b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$32b2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _iconAddToCartSvg = require("../../static/assets/images/icon-add-to-cart.svg");
+var _iconAddToCartSvgDefault = parcelHelpers.interopDefault(_iconAddToCartSvg);
+var _iconIncrementQuantitySvg = require("../../static/assets/images/icon-increment-quantity.svg");
+var _iconIncrementQuantitySvgDefault = parcelHelpers.interopDefault(_iconIncrementQuantitySvg);
+var _iconDecrementQuantitySvg = require("../../static/assets/images/icon-decrement-quantity.svg");
+var _iconDecrementQuantitySvgDefault = parcelHelpers.interopDefault(_iconDecrementQuantitySvg);
+const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart })=>{
+    const addToCartClickHandler = (e)=>{
+        const userSelectedItemId = parseInt(e.target.id, 10);
+        const userSelectedItem = data?.find((dataItem)=>dataItem.id == userSelectedItemId);
+        setNumberOfItemsInCart((prev)=>prev + 1);
+        setItemsInCart((prevItems)=>{
+            const isItemAlreadyPresent = prevItems.find((item)=>item.id == userSelectedItemId);
+            if (prevItems.length !== 0 && isItemAlreadyPresent) {
+                const updatedItemList = prevItems.map((item)=>{
+                    if (item.id == userSelectedItemId) return {
+                        ...item,
+                        itemQuantity: item.itemQuantity + 1
+                    };
+                    return item;
+                });
+                console.log("updatedItemList", updatedItemList);
+                return updatedItemList;
+            }
+            /*if (prevItems.length !== 0 ) {
+                return [...prevItems, userSelectedItem]
+            }*/ return prevItems?.length > 0 ? [
+                ...prevItems,
+                !isItemAlreadyPresent && userSelectedItem
+            ] : [
+                userSelectedItem
+            ];
+        });
+    };
+    const removeFromCartClickHandler = (e)=>{
+        setNumberOfItemsInCart((prev)=>prev - 1);
+        console.log("e.target.id", e.target.id);
+        const userSelectedItemId = parseInt(e.target.id, 10);
+        // const userSelectedItem = data?.find((dataItem) => dataItem.id == userSelectedItemId)
+        setItemsInCart((prevItems)=>{
+            const isItemAlreadyPresent = prevItems.find((item)=>item.id === userSelectedItemId);
+            if (prevItems.length !== 0 && isItemAlreadyPresent) {
+                const updatedItemList = prevItems.map((item)=>{
+                    if (item.id === userSelectedItemId) return {
+                        ...item,
+                        itemQuantity: item.itemQuantity > 0 ? item.itemQuantity - 1 : 0
+                    };
+                    return item;
+                });
+                return updatedItemList;
+            }
+            /*if (prevItems.length !== 0 ) {
+                return [...prevItems, userSelectedItem]
+            }*/ return prevItems?.length > 0 && !isItemAlreadyPresent && [
+                ...prevItems
+            ];
+        });
+    };
+    const quantityForEachDessert = ()=>{
+        const foundTheCurrentItem = itemsInCart?.find((item)=>item?.id == parseInt(id, 10));
+        return foundTheCurrentItem?.itemQuantity ? foundTheCurrentItem.itemQuantity : 0;
+    };
+    const { desktop, mobile, tablet, thumbnail } = image;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex flex-col mx-4 mb-20 font-redhat",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "size-52 -my-5 group-hover:outline-customRed",
+                src: desktop,
+                alt: "picture of a ${name}"
+            }, void 0, false, {
+                fileName: "src/components/EachDessertCard.jsx",
+                lineNumber: 75,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                role: "button",
+                className: " ml-6 h-12 group w-40 rounded-full bg-slate-50  hover:bg-customRed",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "flex pt-2  group-hover:hidden  justify-center align-center",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: " size-8 ",
+                                src: (0, _iconAddToCartSvgDefault.default)
+                            }, void 0, false, {
+                                fileName: "src/components/EachDessertCard.jsx",
+                                lineNumber: 80,
+                                columnNumber: 17
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-center font-redhat font-semibold  ",
+                                children: "Add to Cart"
+                            }, void 0, false, {
+                                fileName: "src/components/EachDessertCard.jsx",
+                                lineNumber: 81,
+                                columnNumber: 17
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/EachDessertCard.jsx",
+                        lineNumber: 79,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "hidden group-hover:flex  mt-3 justify-evenly",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+                                id: id,
+                                className: "size-3 mx-1 mt-1 fill-current group-hover:text-white hover:bg-white hover:rounded-lg hover:!text-customRed",
+                                onClick: removeFromCartClickHandler,
+                                xmlns: "http://www.w3.org/2000/svg",
+                                width: "10",
+                                height: "2",
+                                fill: "none",
+                                viewBox: "0 0 10 2",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                    d: "M0 .375h10v1.25H0V.375Z"
+                                }, void 0, false, {
+                                    fileName: "src/components/EachDessertCard.jsx",
+                                    lineNumber: 91,
+                                    columnNumber: 21
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/EachDessertCard.jsx",
+                                lineNumber: 87,
+                                columnNumber: 17
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                id: id,
+                                className: "px-1 text-white",
+                                children: quantityForEachDessert()
+                            }, void 0, false, {
+                                fileName: "src/components/EachDessertCard.jsx",
+                                lineNumber: 94,
+                                columnNumber: 17
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+                                className: "size-3 mx-2  mt-1 fill-current group-hover:text-white hover:bg-white hover:rounded-lg hover:!text-customRed ",
+                                id: id,
+                                onClick: (e)=>addToCartClickHandler(e),
+                                xmlns: "http://www.w3.org/2000/svg",
+                                width: "10",
+                                height: "10",
+                                fill: "none",
+                                viewBox: "0 0 10 10",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                    d: "M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
+                                }, void 0, false, {
+                                    fileName: "src/components/EachDessertCard.jsx",
+                                    lineNumber: 100,
+                                    columnNumber: 21
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/EachDessertCard.jsx",
+                                lineNumber: 96,
+                                columnNumber: 17
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/EachDessertCard.jsx",
+                        lineNumber: 86,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/EachDessertCard.jsx",
+                lineNumber: 76,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex flex-col mt-4",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: category
+                    }, void 0, false, {
+                        fileName: "src/components/EachDessertCard.jsx",
+                        lineNumber: 110,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "font-semibold",
+                        children: name
+                    }, void 0, false, {
+                        fileName: "src/components/EachDessertCard.jsx",
+                        lineNumber: 111,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "text-customRed",
+                        children: [
+                            "$",
+                            price
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/EachDessertCard.jsx",
+                        lineNumber: 112,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/EachDessertCard.jsx",
+                lineNumber: 109,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, id, true, {
+        fileName: "src/components/EachDessertCard.jsx",
+        lineNumber: 73,
+        columnNumber: 5
+    }, undefined);
+};
+_c = EachDessertCard;
+exports.default = EachDessertCard;
+var _c;
+$RefreshReg$(_c, "EachDessertCard");
+
+  $parcel$ReactRefreshHelpers$32b2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../static/assets/images/icon-add-to-cart.svg":"5YGND","../../static/assets/images/icon-increment-quantity.svg":"8KFuV","../../static/assets/images/icon-decrement-quantity.svg":"8Zu1D","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5YGND":[function(require,module,exports) {
+module.exports = require("c60ad53a8ff81a4b").getBundleURL("bLxZJ") + "icon-add-to-cart.259b330e.svg" + "?" + Date.now();
+
+},{"c60ad53a8ff81a4b":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"8KFuV":[function(require,module,exports) {
+module.exports = require("21180b543f50665f").getBundleURL("bLxZJ") + "icon-increment-quantity.253c4397.svg" + "?" + Date.now();
+
+},{"21180b543f50665f":"lgJ39"}],"8Zu1D":[function(require,module,exports) {
+module.exports = require("7308b9ef6d8d4556").getBundleURL("bLxZJ") + "icon-decrement-quantity.8c18a607.svg" + "?" + Date.now();
+
+},{"7308b9ef6d8d4556":"lgJ39"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27463,360 +27815,7 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"7422ead32dcc1e6b":"786KC"}],"jgmu9":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$246b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$246b.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _eachDessertCard = require("./EachDessertCard");
-var _eachDessertCardDefault = parcelHelpers.interopDefault(_eachDessertCard);
-const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart, selectedItem, setSelectedItem })=>{
-    console.log("data", data);
-    const pageHeading = "Desserts";
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-col ml-20 mt-6 h-screen",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                className: "font-redhat mb-5 ml-4 text-lg font-bold",
-                children: [
-                    " ",
-                    pageHeading
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Dessert.jsx",
-                lineNumber: 16,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex flex-row flex-wrap ",
-                children: data?.map((eachItem, index)=>{
-                    const { id, image, name, price, category, itemQuantity } = eachItem;
-                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _eachDessertCardDefault.default), {
-                        id: id,
-                        image: image,
-                        name: name,
-                        price: price,
-                        category: category,
-                        itemQuantity: itemQuantity,
-                        data: data,
-                        numberOfItemsInCart: numberOfItemsInCart,
-                        setNumberOfItemsInCart: setNumberOfItemsInCart,
-                        itemsInCart: itemsInCart,
-                        setItemsInCart: setItemsInCart
-                    }, index, false, {
-                        fileName: "src/components/Dessert.jsx",
-                        lineNumber: 23,
-                        columnNumber: 17
-                    }, undefined);
-                })
-            }, void 0, false, {
-                fileName: "src/components/Dessert.jsx",
-                lineNumber: 17,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/Dessert.jsx",
-        lineNumber: 15,
-        columnNumber: 9
-    }, undefined);
-};
-_c = Dessert;
-exports.default = Dessert;
-var _c;
-$RefreshReg$(_c, "Dessert");
-
-  $parcel$ReactRefreshHelpers$246b.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./EachDessertCard":"kQQlC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kQQlC":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$32b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$32b2.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _iconAddToCartSvg = require("../../static/assets/images/icon-add-to-cart.svg");
-var _iconAddToCartSvgDefault = parcelHelpers.interopDefault(_iconAddToCartSvg);
-var _iconIncrementQuantitySvg = require("../../static/assets/images/icon-increment-quantity.svg");
-var _iconIncrementQuantitySvgDefault = parcelHelpers.interopDefault(_iconIncrementQuantitySvg);
-var _iconDecrementQuantitySvg = require("../../static/assets/images/icon-decrement-quantity.svg");
-var _iconDecrementQuantitySvgDefault = parcelHelpers.interopDefault(_iconDecrementQuantitySvg);
-const EachDessertCard = ({ id, image, name, price, category, itemQuantity, data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart })=>{
-    const addToCartClickHandler = (e)=>{
-        const userSelectedItemId = e.target.id;
-        const userSelectedItem = data?.find((dataItem)=>dataItem.id == userSelectedItemId);
-        setNumberOfItemsInCart((prev)=>prev + 1);
-        setItemsInCart((prevItems)=>{
-            const isItemAlreadyPresent = prevItems.find((item)=>item.id == userSelectedItemId);
-            if (prevItems.length !== 0 && isItemAlreadyPresent) {
-                const updatedItemList = prevItems.map((item)=>{
-                    if (item.id == userSelectedItemId) return {
-                        ...item,
-                        itemQuantity: item.itemQuantity + 1
-                    };
-                    return item;
-                });
-                console.log("updatedItemList", updatedItemList);
-                return updatedItemList;
-            }
-            /*if (prevItems.length !== 0 ) {
-                return [...prevItems, userSelectedItem]
-            }*/ return prevItems?.length > 0 ? [
-                ...prevItems,
-                userSelectedItem
-            ] : [
-                userSelectedItem
-            ];
-        });
-    };
-    const removeFromCartClickHandler = (e)=>{
-        setNumberOfItemsInCart((prev)=>prev - 1);
-        console.log("e.target.id", e.target.id);
-        const userSelectedItemId = e.target.id;
-        // const userSelectedItem = data?.find((dataItem) => dataItem.id == userSelectedItemId)
-        setItemsInCart((prevItems)=>{
-            const isItemAlreadyPresent = prevItems.find((item)=>item.id == userSelectedItemId);
-            if (prevItems.length !== 0 && isItemAlreadyPresent) {
-                const updatedItemList = prevItems.map((item)=>{
-                    if (item.id == userSelectedItemId) return {
-                        ...item,
-                        itemQuantity: item.itemQuantity > 0 ? item.itemQuantity - 1 : 0
-                    };
-                    return item;
-                });
-                return updatedItemList;
-            }
-            /*if (prevItems.length !== 0 ) {
-                return [...prevItems, userSelectedItem]
-            }*/ return prevItems?.length > 0 && !isItemAlreadyPresent && [
-                ...prevItems
-            ];
-        });
-    };
-    const quantityForEachDessert = ()=>{
-        const foundTheCurrentItem = itemsInCart.find((item)=>item.id === id);
-        return foundTheCurrentItem?.itemQuantity ? foundTheCurrentItem.itemQuantity : 0;
-    };
-    const { desktop, mobile, tablet, thumbnail } = image;
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-col mx-4 mb-20 font-redhat",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "size-52 -my-5 group-hover:outline-customRed",
-                src: desktop,
-                alt: "picture of a ${name}"
-            }, void 0, false, {
-                fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 75,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                role: "button",
-                className: " ml-6 h-12 group w-40 rounded-full bg-slate-50  hover:bg-customRed",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "flex pt-2  group-hover:hidden  justify-center align-center",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: " size-8 ",
-                                src: (0, _iconAddToCartSvgDefault.default)
-                            }, void 0, false, {
-                                fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 80,
-                                columnNumber: 17
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "text-center font-redhat font-semibold  ",
-                                children: "Add to Cart"
-                            }, void 0, false, {
-                                fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 81,
-                                columnNumber: 17
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 79,
-                        columnNumber: 13
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "hidden group-hover:flex  mt-3 justify-evenly",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
-                                id: id,
-                                className: "size-3 mx-1 mt-1 fill-current group-hover:text-white hover:bg-white hover:rounded-lg hover:!text-customRed",
-                                onClick: removeFromCartClickHandler,
-                                xmlns: "http://www.w3.org/2000/svg",
-                                width: "10",
-                                height: "2",
-                                fill: "none",
-                                viewBox: "0 0 10 2",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
-                                    d: "M0 .375h10v1.25H0V.375Z"
-                                }, void 0, false, {
-                                    fileName: "src/components/EachDessertCard.jsx",
-                                    lineNumber: 91,
-                                    columnNumber: 21
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 87,
-                                columnNumber: 17
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                id: id,
-                                className: "px-1 text-white",
-                                children: quantityForEachDessert()
-                            }, void 0, false, {
-                                fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 94,
-                                columnNumber: 17
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
-                                className: "size-3 mx-2  mt-1 fill-current group-hover:text-white hover:bg-white hover:rounded-lg hover:!text-customRed ",
-                                id: id,
-                                onClick: addToCartClickHandler,
-                                xmlns: "http://www.w3.org/2000/svg",
-                                width: "10",
-                                height: "10",
-                                fill: "none",
-                                viewBox: "0 0 10 10",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
-                                    d: "M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
-                                }, void 0, false, {
-                                    fileName: "src/components/EachDessertCard.jsx",
-                                    lineNumber: 100,
-                                    columnNumber: 21
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 96,
-                                columnNumber: 17
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 86,
-                        columnNumber: 13
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 76,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex flex-col mt-4",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: category
-                    }, void 0, false, {
-                        fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 110,
-                        columnNumber: 13
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "font-semibold",
-                        children: name
-                    }, void 0, false, {
-                        fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 111,
-                        columnNumber: 13
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "text-customRed",
-                        children: [
-                            "$",
-                            price
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 112,
-                        columnNumber: 13
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 109,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, id, true, {
-        fileName: "src/components/EachDessertCard.jsx",
-        lineNumber: 73,
-        columnNumber: 5
-    }, undefined);
-};
-_c = EachDessertCard;
-exports.default = EachDessertCard;
-var _c;
-$RefreshReg$(_c, "EachDessertCard");
-
-  $parcel$ReactRefreshHelpers$32b2.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../static/assets/images/icon-add-to-cart.svg":"5YGND","../../static/assets/images/icon-increment-quantity.svg":"8KFuV","../../static/assets/images/icon-decrement-quantity.svg":"8Zu1D","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5YGND":[function(require,module,exports) {
-module.exports = require("c60ad53a8ff81a4b").getBundleURL("bLxZJ") + "icon-add-to-cart.259b330e.svg" + "?" + Date.now();
-
-},{"c60ad53a8ff81a4b":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"8KFuV":[function(require,module,exports) {
-module.exports = require("21180b543f50665f").getBundleURL("bLxZJ") + "icon-increment-quantity.253c4397.svg" + "?" + Date.now();
-
-},{"21180b543f50665f":"lgJ39"}],"8Zu1D":[function(require,module,exports) {
-module.exports = require("7308b9ef6d8d4556").getBundleURL("bLxZJ") + "icon-decrement-quantity.8c18a607.svg" + "?" + Date.now();
-
-},{"7308b9ef6d8d4556":"lgJ39"}],"4lJgb":[function(require,module,exports) {
+},{"7422ead32dcc1e6b":"786KC"}],"4lJgb":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$65eb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27905,49 +27904,54 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 const DisplayItemsAddedToCart = ({ itemsInCart })=>{
     const totalPriceThisItem = (itemQuantity, price)=>{
+        console.log("itemQuantity inside function", itemQuantity);
+        console.log("price each inside function", price);
         return itemQuantity * price;
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: itemsInCart.map((item, index)=>{
-            console.log("item");
+        children: itemsInCart?.map((item, index)=>{
+            console.log("item", item);
             const { name, itemQuantity, price } = item;
-            console.log("itemQuantity", itemQuantity);
-            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: name
                     }, void 0, false, {
                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 16,
-                        columnNumber: 21
+                        lineNumber: 18,
+                        columnNumber: 25
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: itemQuantity
                     }, void 0, false, {
                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 17,
-                        columnNumber: 21
+                        lineNumber: 19,
+                        columnNumber: 25
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: price
                     }, void 0, false, {
                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 18,
-                        columnNumber: 21
+                        lineNumber: 20,
+                        columnNumber: 25
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: totalPriceThisItem(itemQuantity, price)
                     }, void 0, false, {
                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 19,
-                        columnNumber: 21
+                        lineNumber: 21,
+                        columnNumber: 25
                     }, undefined)
                 ]
-            }, void 0, true);
+            }, index, true, {
+                fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                lineNumber: 17,
+                columnNumber: 21
+            }, undefined);
         })
     }, void 0, false, {
         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-        lineNumber: 9,
+        lineNumber: 11,
         columnNumber: 9
     }, undefined);
 };

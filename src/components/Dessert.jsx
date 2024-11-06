@@ -8,7 +8,6 @@ const Dessert = ({data,
                 setItemsInCart,
                 selectedItem,
                 setSelectedItem }) => {
-    console.log("data", data)
     const pageHeading = "Desserts"
 
     return (
@@ -18,7 +17,6 @@ const Dessert = ({data,
             {data?.map((eachItem, index) => {
 
             const {id, image, name, price, category, itemQuantity} = eachItem;
-
             return (
                 <EachDessertCard 
                 key={index}

@@ -17,7 +17,7 @@ const EachDessertCard = ( {
                         setItemsInCart,
                     }) => {                  
     const addToCartClickHandler = (e) => {
-        const userSelectedItemId = e.target.id
+        const userSelectedItemId = parseInt(e.target.id, 10)
         const userSelectedItem = data?.find((dataItem) => dataItem.id == userSelectedItemId)
         setNumberOfItemsInCart((prev) => prev+1)
         setItemsInCart((prevItems) => {
@@ -35,7 +35,7 @@ const EachDessertCard = ( {
             /*if (prevItems.length !== 0 ) {
                 return [...prevItems, userSelectedItem]
             }*/
-            return (prevItems?.length>0 ? [ ...prevItems,userSelectedItem]: [userSelectedItem])      
+            return (prevItems?.length>0 ? [ ...prevItems, !isItemAlreadyPresent && userSelectedItem]: [userSelectedItem])      
         })
         
     }
@@ -43,13 +43,13 @@ const EachDessertCard = ( {
     const removeFromCartClickHandler = (e) => {
         setNumberOfItemsInCart((prev) => prev-1)
         console.log("e.target.id", e.target.id)
-        const userSelectedItemId = e.target.id
+        const userSelectedItemId = parseInt(e.target.id, 10)
         // const userSelectedItem = data?.find((dataItem) => dataItem.id == userSelectedItemId)
         setItemsInCart((prevItems) => {
-            const isItemAlreadyPresent = prevItems.find((item) => item.id == userSelectedItemId )
+            const isItemAlreadyPresent = prevItems.find((item) => item.id === userSelectedItemId )
             if(prevItems.length !== 0 && isItemAlreadyPresent) {
                 const updatedItemList = prevItems.map((item) => {
-                    if(item.id == userSelectedItemId) {
+                    if(item.id === userSelectedItemId) {
                         return { ...item, itemQuantity: item.itemQuantity>0 ? item.itemQuantity-1 : 0 }
                     }
                     return item
@@ -65,7 +65,7 @@ const EachDessertCard = ( {
 
 
     const quantityForEachDessert = () => {
-    const foundTheCurrentItem =itemsInCart.find((item)=> item.id === id)
+    const foundTheCurrentItem =itemsInCart?.find((item)=> item?.id == parseInt(id, 10))
     return foundTheCurrentItem?.itemQuantity ? foundTheCurrentItem.itemQuantity : 0
     }
     const {desktop, mobile, tablet, thumbnail} = image
@@ -94,8 +94,8 @@ return (
                 <p id={id} className="px-1 text-white">{quantityForEachDessert()}</p>
 
                 <svg className="size-3 mx-2  mt-1 fill-current group-hover:text-white hover:bg-white hover:rounded-lg hover:!text-customRed " 
-                    id={id }
-                    onClick={addToCartClickHandler} 
+                    id={id}
+                    onClick={(e)=>addToCartClickHandler(e)} 
                     xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10">
                     <path  d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/>
                 </svg>
