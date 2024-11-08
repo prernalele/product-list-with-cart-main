@@ -4,7 +4,6 @@ import DisplayItemsAddedToCart from "./DisplayItemsAddedToCart";
 
 const ShoppingCart = ({itemsInCart, numberOfItemsInCart, setNumberOfItemsInCart}) => {
 
-console.log("itemsInCart", itemsInCart)
 return (
 
     <div className="flex font-redhat flex-col bg-slate-50 ml-0 pl-5 pr-10 h-80 w-80 justify-evenly mt-10 mr-40">

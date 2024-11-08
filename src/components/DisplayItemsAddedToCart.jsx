@@ -1,30 +1,31 @@
 import React from "react";
 
 const DisplayItemsAddedToCart  = ({itemsInCart}) => {
+    console.log("itemsInCart", itemsInCart);
+
     const totalPriceThisItem = (itemQuantity, price) => {
-        console.log("itemQuantity inside function", itemQuantity)
-        console.log("price each inside function", price)
-        return (itemQuantity*price)
-    }
+      console.log("itemQuantity inside function", itemQuantity);
+      console.log("price each inside function", price);
+      return parseFloat(itemQuantity) * parseFloat(price);
+    };
 
     return (
-        <div>
-            {itemsInCart?.map((item, index)=> {
-                console.log("item",item )
-                const {name, itemQuantity, price} = item
+      <div>
+        {itemsInCart !== undefined &&
+          itemsInCart?.map((item, index) => {
+            const { name, itemQuantity, price } = item;
 
-                return(
-                    <div key={index}>
-                        <p>{name}</p>
-                        <p>{itemQuantity}</p>
-                        <span>{price}</span>
-                        <span>{totalPriceThisItem(itemQuantity, price)}</span>
-                    </div>
-
-                )
-            })}
-        </div>
-    )
+            return (
+              <div key={index}>
+                <p>{name}</p>
+                <p>{itemQuantity}</p>
+                <span>{price}</span>
+                <span>{totalPriceThisItem}</span>
+              </div>
+            );
+          })}
+      </div>
+    );
 
 }
 

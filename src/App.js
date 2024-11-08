@@ -11,7 +11,6 @@ const  App = () => {
     // assigning ID for each dessert data
     const dataWithId = data.map((datum, index) => {
         return {...datum, ["id"] : index+1, ["itemQuantity"]: 1}} )
-    console.log("dataWithId", dataWithId)
 
     // fetching the data with Id
 useEffect (()=> {
