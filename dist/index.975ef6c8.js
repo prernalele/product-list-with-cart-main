@@ -27311,18 +27311,15 @@ var _eachDessertCardDefault = parcelHelpers.interopDefault(_eachDessertCard);
 const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart, selectedItem, setSelectedItem })=>{
     const pageHeading = "Desserts";
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-col ml-20 mt-6 h-screen",
+        className: "flex flex-col ml-20 mt-6 h-dvh",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 className: "font-redhat mb-5 ml-4 text-lg font-bold",
-                children: [
-                    " ",
-                    pageHeading
-                ]
-            }, void 0, true, {
+                children: pageHeading
+            }, void 0, false, {
                 fileName: "src/components/Dessert.jsx",
                 lineNumber: 15,
-                columnNumber: 13
+                columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "flex flex-row flex-wrap ",
@@ -27337,20 +27334,20 @@ const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCar
                         setItemsInCart: setItemsInCart
                     }, index, false, {
                         fileName: "src/components/Dessert.jsx",
-                        lineNumber: 20,
-                        columnNumber: 17
+                        lineNumber: 22,
+                        columnNumber: 15
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/components/Dessert.jsx",
-                lineNumber: 16,
-                columnNumber: 13
+                lineNumber: 18,
+                columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Dessert.jsx",
         lineNumber: 14,
-        columnNumber: 9
+        columnNumber: 7
     }, undefined);
 };
 _c = Dessert;
@@ -27902,43 +27899,47 @@ const DisplayItemsAddedToCart = ({ itemsInCart })=>{
         return parseFloat(itemQuantity) * parseFloat(price);
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: itemsInCart !== undefined && itemsInCart?.map((item, index)=>{
+        children: itemsInCart?.map((item, index)=>{
             const { name, itemQuantity, price } = item;
+            console.log("itemQuantity", itemQuantity);
             return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: name
                     }, void 0, false, {
                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 20,
-                        columnNumber: 17
+                        lineNumber: 19,
+                        columnNumber: 15
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: itemQuantity
+                        className: "text-customRed font-medium",
+                        children: `${itemQuantity}x`
+                    }, void 0, false, {
+                        fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                        lineNumber: 20,
+                        columnNumber: 15
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "text-amber-700 font-light",
+                        children: `@${price}`
                     }, void 0, false, {
                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
                         lineNumber: 21,
-                        columnNumber: 17
+                        columnNumber: 15
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: price
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-amber-700 font-medium",
+                        children: `$${parseFloat(itemQuantity) * parseFloat(price)}`
                     }, void 0, false, {
                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
                         lineNumber: 22,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: totalPriceThisItem
-                    }, void 0, false, {
-                        fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 23,
-                        columnNumber: 17
+                        columnNumber: 15
                     }, undefined)
                 ]
             }, index, true, {
                 fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                lineNumber: 19,
-                columnNumber: 15
+                lineNumber: 18,
+                columnNumber: 13
             }, undefined);
         })
     }, void 0, false, {

@@ -11,19 +11,20 @@ const DisplayItemsAddedToCart  = ({itemsInCart}) => {
 
     return (
       <div>
-        {itemsInCart !== undefined &&
-          itemsInCart?.map((item, index) => {
-            const { name, itemQuantity, price } = item;
-
-            return (
-              <div key={index}>
-                <p>{name}</p>
-                <p>{itemQuantity}</p>
-                <span>{price}</span>
-                <span>{totalPriceThisItem}</span>
-              </div>
-            );
-          })}
+        {itemsInCart?.map((item, index) => {
+          const { name, itemQuantity, price } = item;
+          console.log("itemQuantity", itemQuantity);
+          return (
+            <div key={index}>
+              <p>{name}</p>
+              <p className="text-customRed font-medium">{`${itemQuantity}x`}</p>
+              <span className="text-amber-700 font-light">{`@${price}`}</span>
+              <p className="text-amber-700 font-medium">
+                {`$${parseFloat(itemQuantity) * parseFloat(price)}`}
+              </p>
+            </div>
+          );
+        })}
       </div>
     );
 
