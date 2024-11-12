@@ -27251,7 +27251,7 @@ const App = ()=>{
         fetch(dataWithId).then(setAllData(dataWithId)).catch((error)=>console.log("Error fetching data", error));
     }, []);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex font-custom bg-rose-50 justify-evenly overflow-scroll",
+        className: "flex font-custom bg-rose-50 overflow-scroll",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _dessertDefault.default), {
                 data: allData,
@@ -27262,7 +27262,7 @@ const App = ()=>{
             }, void 0, false, {
                 fileName: "src/App.js",
                 lineNumber: 24,
-                columnNumber: 9
+                columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shoppingCartDefault.default), {
                 numberOfItemsInCart: numberOfItemsInCart,
@@ -27271,13 +27271,13 @@ const App = ()=>{
             }, void 0, false, {
                 fileName: "src/App.js",
                 lineNumber: 31,
-                columnNumber: 9
+                columnNumber: 5
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
         lineNumber: 23,
-        columnNumber: 5
+        columnNumber: 3
     }, undefined);
 };
 _s(App, "eGbRdApek0U3iYfidgOtb/yAqCg=");
@@ -27311,7 +27311,7 @@ var _eachDessertCardDefault = parcelHelpers.interopDefault(_eachDessertCard);
 const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart, selectedItem, setSelectedItem })=>{
     const pageHeading = "Desserts";
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-col ml-20 mt-6 h-dvh",
+        className: "flex flex-col ml-10 mt-6 h-dvh",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 className: "font-redhat mb-5 ml-4 text-lg font-bold",
@@ -27435,7 +27435,7 @@ const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItems
         return foundTheCurrentItem?.itemQuantity ? foundTheCurrentItem.itemQuantity : 0;
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-col mx-4 mb-20 font-redhat",
+        className: "flex flex-grow flex-col mx-4 mb-20 font-redhat",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 className: "size-52 -my-5 group-hover:outline-customRed",
@@ -27822,47 +27822,53 @@ var _illustrationEmptyCartSvgDefault = parcelHelpers.interopDefault(_illustratio
 var _displayItemsAddedToCart = require("./DisplayItemsAddedToCart");
 var _displayItemsAddedToCartDefault = parcelHelpers.interopDefault(_displayItemsAddedToCart);
 const ShoppingCart = ({ itemsInCart, numberOfItemsInCart, setNumberOfItemsInCart })=>{
+    const defaultText = "Your added items will appear here";
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex font-redhat flex-col bg-slate-50 ml-0 pl-5 pr-10 h-80 w-80 justify-evenly mt-10 mr-40",
+        className: "flex font-redhat flex-col bg-slate-50 ml-0 pl-4 pr-10 mt-10 mr-15 w-1/4 h-1/3 flex-grow-1",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: "flex text-orange-500 font-bold ",
+                className: " text-orange-500 font-bold ",
                 children: `Your Cart (${numberOfItemsInCart})`
             }, void 0, false, {
                 fileName: "src/components/ShoppingCart.jsx",
-                lineNumber: 10,
-                columnNumber: 9
-            }, undefined),
-            !itemsInCart?.length && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "flex justify-center",
-                src: (0, _illustrationEmptyCartSvgDefault.default),
-                alt: "Empty Cart illustration",
-                width: "100",
-                height: "100"
-            }, void 0, false, {
-                fileName: "src/components/ShoppingCart.jsx",
                 lineNumber: 11,
-                columnNumber: 34
+                columnNumber: 7
             }, undefined),
+            !itemsInCart?.length && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        className: "flex justify-center",
+                        src: (0, _illustrationEmptyCartSvgDefault.default),
+                        alt: "Empty Cart illustration",
+                        width: "100",
+                        height: "100"
+                    }, void 0, false, {
+                        fileName: "src/components/ShoppingCart.jsx",
+                        lineNumber: 14,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "flex font-redhat justify-center text-red-900",
+                        children: defaultText
+                    }, void 0, false, {
+                        fileName: "src/components/ShoppingCart.jsx",
+                        lineNumber: 21,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _displayItemsAddedToCartDefault.default), {
-                itemsInCart: itemsInCart
+                itemsInCart: itemsInCart,
+                setNumberOfItemsInCart: setNumberOfItemsInCart
             }, void 0, false, {
                 fileName: "src/components/ShoppingCart.jsx",
-                lineNumber: 12,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: "flex font-redhat justify-center text-red-900",
-                children: "Your added items will appear here"
-            }, void 0, false, {
-                fileName: "src/components/ShoppingCart.jsx",
-                lineNumber: 13,
-                columnNumber: 9
+                lineNumber: 26,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/ShoppingCart.jsx",
-        lineNumber: 9,
+        lineNumber: 10,
         columnNumber: 5
     }, undefined);
 };
@@ -27891,63 +27897,103 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-const DisplayItemsAddedToCart = ({ itemsInCart })=>{
-    console.log("itemsInCart", itemsInCart);
-    const totalPriceThisItem = (itemQuantity, price)=>{
-        console.log("itemQuantity inside function", itemQuantity);
-        console.log("price each inside function", price);
-        return parseFloat(itemQuantity) * parseFloat(price);
-    };
+var _iconRemoveItemSvg = require("../../static/assets/images/icon-remove-item.svg");
+var _iconRemoveItemSvgDefault = parcelHelpers.interopDefault(_iconRemoveItemSvg);
+var _s = $RefreshSig$();
+const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart })=>{
+    _s();
+    const [orderTotal, setOrderTotal] = (0, _react.useState)(0);
+    // setOrderTotal((prevTotal) => {
+    //   prevTotal + totalSoFar;
+    // });
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex flex-col space-y-2 divide-y divide-customRed",
         children: itemsInCart?.map((item, index)=>{
             const { name, itemQuantity, price } = item;
-            console.log("itemQuantity", itemQuantity);
             return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "grow",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: name
                     }, void 0, false, {
                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 19,
-                        columnNumber: 15
+                        lineNumber: 17,
+                        columnNumber: 13
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-customRed font-medium",
-                        children: `${itemQuantity}x`
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "flex flex-row justify-start border-spacing-4 ",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "text-customRed ml-2 font-medium",
+                                children: `${itemQuantity}x`
+                            }, void 0, false, {
+                                fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                                lineNumber: 19,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "text-gray-500 ml-4 font-light",
+                                children: `@${price}`
+                            }, void 0, false, {
+                                fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                                lineNumber: 20,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "text-gray-700 ml-4 font-medium",
+                                children: `$${parseFloat(itemQuantity) * parseFloat(price)}`
+                            }, void 0, false, {
+                                fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                                lineNumber: 21,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+                                className: "ml-10",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                width: "10",
+                                height: "10",
+                                fill: "none",
+                                viewBox: "0 0 10 10",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                    fill: "#CAAFA7",
+                                    d: "M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
+                                }, void 0, false, {
+                                    fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                                    lineNumber: 32,
+                                    columnNumber: 17
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                                lineNumber: 24,
+                                columnNumber: 15
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                        lineNumber: 18,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: `Order Total  $ ${orderTotal} `
                     }, void 0, false, {
                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 20,
-                        columnNumber: 15
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        className: "text-amber-700 font-light",
-                        children: `@${price}`
-                    }, void 0, false, {
-                        fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 21,
-                        columnNumber: 15
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-amber-700 font-medium",
-                        children: `$${parseFloat(itemQuantity) * parseFloat(price)}`
-                    }, void 0, false, {
-                        fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 22,
-                        columnNumber: 15
+                        lineNumber: 38,
+                        columnNumber: 13
                     }, undefined)
                 ]
             }, index, true, {
                 fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                lineNumber: 18,
-                columnNumber: 13
+                lineNumber: 16,
+                columnNumber: 11
             }, undefined);
         })
     }, void 0, false, {
         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-        lineNumber: 13,
-        columnNumber: 7
+        lineNumber: 12,
+        columnNumber: 5
     }, undefined);
 };
+_s(DisplayItemsAddedToCart, "efbvckO7ui9hwKTufN39Ja008pg=");
 _c = DisplayItemsAddedToCart;
 exports.default = DisplayItemsAddedToCart;
 var _c;
@@ -27958,6 +28004,9 @@ $RefreshReg$(_c, "DisplayItemsAddedToCart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["farZc","1xC6H","8lqZg"], "8lqZg", "parcelRequirea0bd")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../static/assets/images/icon-remove-item.svg":"9Qjm4"}],"9Qjm4":[function(require,module,exports) {
+module.exports = require("822925d937b3d622").getBundleURL("bLxZJ") + "icon-remove-item.39f74ab5.svg" + "?" + Date.now();
+
+},{"822925d937b3d622":"lgJ39"}]},["farZc","1xC6H","8lqZg"], "8lqZg", "parcelRequirea0bd")
 
 //# sourceMappingURL=index.975ef6c8.js.map

@@ -79,7 +79,7 @@ const EachDessertCard = ({
   };
 
   return (
-    <div key={id} className="flex flex-col mx-4 mb-20 font-redhat">
+    <div key={id} className="flex flex-grow flex-col mx-4 mb-20 font-redhat">
       <img
         className="size-52 -my-5 group-hover:outline-customRed"
         src={desktop}

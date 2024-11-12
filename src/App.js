@@ -20,21 +20,21 @@ useEffect (()=> {
 },[])
 
 return (
-    <div className="flex font-custom bg-rose-50 justify-evenly overflow-scroll">
-        <Dessert 
-        data={allData}
-        numberOfItemsInCart={numberOfItemsInCart} 
-        setNumberOfItemsInCart={setNumberOfItemsInCart}
-        itemsInCart={itemsInCart}
-        setItemsInCart={setItemsInCart}
-        />
-        <ShoppingCart 
-        numberOfItemsInCart={numberOfItemsInCart} 
-        setNumberOfItemsInCart={setNumberOfItemsInCart} 
-        itemsInCart={itemsInCart}
-        />
-    </div>
-    )
+  <div className="flex font-custom bg-rose-50 overflow-scroll">
+    <Dessert
+      data={allData}
+      numberOfItemsInCart={numberOfItemsInCart}
+      setNumberOfItemsInCart={setNumberOfItemsInCart}
+      itemsInCart={itemsInCart}
+      setItemsInCart={setItemsInCart}
+    />
+    <ShoppingCart
+      numberOfItemsInCart={numberOfItemsInCart}
+      setNumberOfItemsInCart={setNumberOfItemsInCart}
+      itemsInCart={itemsInCart}
+    />
+  </div>
+);
 
 }
 

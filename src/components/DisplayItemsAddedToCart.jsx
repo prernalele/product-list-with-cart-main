@@ -1,33 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
+import iconRemoveItem from "../../static/assets/images/icon-remove-item.svg";
 
-const DisplayItemsAddedToCart  = ({itemsInCart}) => {
-    console.log("itemsInCart", itemsInCart);
+const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart }) => {
+  const [orderTotal, setOrderTotal] = useState(0);
 
-    const totalPriceThisItem = (itemQuantity, price) => {
-      console.log("itemQuantity inside function", itemQuantity);
-      console.log("price each inside function", price);
-      return parseFloat(itemQuantity) * parseFloat(price);
-    };
+  // setOrderTotal((prevTotal) => {
+  //   prevTotal + totalSoFar;
+  // });
 
-    return (
-      <div>
-        {itemsInCart?.map((item, index) => {
-          const { name, itemQuantity, price } = item;
-          console.log("itemQuantity", itemQuantity);
-          return (
-            <div key={index}>
-              <p>{name}</p>
-              <p className="text-customRed font-medium">{`${itemQuantity}x`}</p>
-              <span className="text-amber-700 font-light">{`@${price}`}</span>
-              <p className="text-amber-700 font-medium">
+  return (
+    <div className="flex flex-col space-y-2 divide-y divide-customRed">
+      {itemsInCart?.map((item, index) => {
+        const { name, itemQuantity, price } = item;
+        return (
+          <div key={index} className="grow">
+            <p>{name}</p>
+            <div className="flex flex-row justify-start border-spacing-4 ">
+              <span className="text-customRed ml-2 font-medium">{`${itemQuantity}x`}</span>
+              <span className="text-gray-500 ml-4 font-light">{`@${price}`}</span>
+              <span className="text-gray-700 ml-4 font-medium">
                 {`$${parseFloat(itemQuantity) * parseFloat(price)}`}
-              </p>
+              </span>
+              <svg
+                className="ml-10"
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="10"
+                fill="none"
+                viewBox="0 0 10 10"
+              >
+                <path
+                  fill="#CAAFA7"
+                  d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
+                />
+              </svg>
             </div>
-          );
-        })}
-      </div>
-    );
+            <div>{`Order Total  $ ${orderTotal} `}</div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
-}
-
-export default DisplayItemsAddedToCart
+export default DisplayItemsAddedToCart;
