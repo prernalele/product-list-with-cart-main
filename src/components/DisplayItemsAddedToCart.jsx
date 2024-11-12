@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import iconRemoveItem from "../../static/assets/images/icon-remove-item.svg";
 
-const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart }) => {
-  const [orderTotal, setOrderTotal] = useState(0);
-
-  // setOrderTotal((prevTotal) => {
-  //   prevTotal + totalSoFar;
-  // });
-
+const DisplayItemsAddedToCart = ({
+  itemsInCart,
+  setNumberOfItemsInCart,
+  total,
+}) => {
   return (
     <div className="flex flex-col space-y-2 divide-y divide-customRed">
       {itemsInCart?.map((item, index) => {
@@ -35,7 +33,7 @@ const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart }) => {
                 />
               </svg>
             </div>
-            <div>{`Order Total  $ ${orderTotal} `}</div>
+            <div>{`Order Total  $ ${total} `}</div>
           </div>
         );
       })}

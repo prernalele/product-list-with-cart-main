@@ -1,7 +1,7 @@
-import React from "react";
-import iconAddToCart from "../../static/assets/images/icon-add-to-cart.svg"
-import  incrementIcon from '../../static/assets/images/icon-increment-quantity.svg'
-import decrementIcon from '../../static/assets/images/icon-decrement-quantity.svg'
+import React, { useState } from "react";
+import iconAddToCart from "../../static/assets/images/icon-add-to-cart.svg";
+import incrementIcon from "../../static/assets/images/icon-increment-quantity.svg";
+import decrementIcon from "../../static/assets/images/icon-decrement-quantity.svg";
 
 const EachDessertCard = ({
   eachItem,
@@ -10,6 +10,8 @@ const EachDessertCard = ({
   setNumberOfItemsInCart,
   itemsInCart,
   setItemsInCart,
+  total,
+  setTotal,
 }) => {
   const { id, image, name, price, category, itemQuantity } = eachItem;
   const { desktop, mobile, tablet, thumbnail } = image;
@@ -20,6 +22,7 @@ const EachDessertCard = ({
     const userSelectedItem = data?.find(
       (dataItem) => dataItem.id === userSelectedItemId
     );
+
     setNumberOfItemsInCart((prev) => prev + 1);
     setItemsInCart((prevItems) => {
       const isItemAlreadyPresent = prevItems.find(
@@ -41,6 +44,14 @@ const EachDessertCard = ({
         ? [...prevItems, !isItemAlreadyPresent && userSelectedItem]
         : [userSelectedItem];
     });
+
+    const value = parseFloat(
+      parseFloat(eachItemClicked.itemQuantity) *
+        parseFloat(eachItemClicked.price)
+    );
+    if (!isNaN(value)) {
+      setTotal((prevTotal) => prevTotal + value);
+    }
   };
 
   const removeFromCartClickHandler = (eachItemClicked) => {
@@ -142,4 +153,4 @@ const EachDessertCard = ({
   );
 };
 
-export default EachDessertCard
+export default EachDessertCard;

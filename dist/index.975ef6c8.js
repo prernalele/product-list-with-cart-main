@@ -27238,6 +27238,7 @@ const App = ()=>{
     const [allData, setAllData] = (0, _react.useState)(null);
     const [numberOfItemsInCart, setNumberOfItemsInCart] = (0, _react.useState)(0);
     const [itemsInCart, setItemsInCart] = (0, _react.useState)([]);
+    const [total, setTotal] = (0, _react.useState)(0);
     // assigning ID for each dessert data
     const dataWithId = (0, _dataJsonDefault.default).map((datum, index)=>{
         return {
@@ -27258,29 +27259,32 @@ const App = ()=>{
                 numberOfItemsInCart: numberOfItemsInCart,
                 setNumberOfItemsInCart: setNumberOfItemsInCart,
                 itemsInCart: itemsInCart,
-                setItemsInCart: setItemsInCart
+                setItemsInCart: setItemsInCart,
+                total: total,
+                setTotal: setTotal
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 24,
-                columnNumber: 5
+                lineNumber: 26,
+                columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shoppingCartDefault.default), {
                 numberOfItemsInCart: numberOfItemsInCart,
                 setNumberOfItemsInCart: setNumberOfItemsInCart,
-                itemsInCart: itemsInCart
+                itemsInCart: itemsInCart,
+                total: total
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 31,
-                columnNumber: 5
+                lineNumber: 35,
+                columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 23,
-        columnNumber: 3
+        lineNumber: 25,
+        columnNumber: 7
     }, undefined);
 };
-_s(App, "eGbRdApek0U3iYfidgOtb/yAqCg=");
+_s(App, "ypP/0LWAY1qRPefuIbpXrBFiBnM=");
 _c = App;
 exports.default = App;
 var _c;
@@ -27308,7 +27312,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _eachDessertCard = require("./EachDessertCard");
 var _eachDessertCardDefault = parcelHelpers.interopDefault(_eachDessertCard);
-const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart, selectedItem, setSelectedItem })=>{
+const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart, total, setTotal })=>{
     const pageHeading = "Desserts";
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex flex-col ml-10 mt-6 h-dvh",
@@ -27318,8 +27322,8 @@ const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCar
                 children: pageHeading
             }, void 0, false, {
                 fileName: "src/components/Dessert.jsx",
-                lineNumber: 15,
-                columnNumber: 9
+                lineNumber: 17,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "flex flex-row flex-wrap ",
@@ -27331,23 +27335,25 @@ const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCar
                         numberOfItemsInCart: numberOfItemsInCart,
                         setNumberOfItemsInCart: setNumberOfItemsInCart,
                         itemsInCart: itemsInCart,
-                        setItemsInCart: setItemsInCart
+                        setItemsInCart: setItemsInCart,
+                        total: total,
+                        setTotal: setTotal
                     }, index, false, {
                         fileName: "src/components/Dessert.jsx",
                         lineNumber: 22,
-                        columnNumber: 15
+                        columnNumber: 13
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/components/Dessert.jsx",
                 lineNumber: 18,
-                columnNumber: 9
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Dessert.jsx",
-        lineNumber: 14,
-        columnNumber: 7
+        lineNumber: 16,
+        columnNumber: 5
     }, undefined);
 };
 _c = Dessert;
@@ -27378,7 +27384,7 @@ var _iconIncrementQuantitySvg = require("../../static/assets/images/icon-increme
 var _iconIncrementQuantitySvgDefault = parcelHelpers.interopDefault(_iconIncrementQuantitySvg);
 var _iconDecrementQuantitySvg = require("../../static/assets/images/icon-decrement-quantity.svg");
 var _iconDecrementQuantitySvgDefault = parcelHelpers.interopDefault(_iconDecrementQuantitySvg);
-const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart })=>{
+const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCart, setItemsInCart, total, setTotal })=>{
     const { id, image, name, price, category, itemQuantity } = eachItem;
     const { desktop, mobile, tablet, thumbnail } = image;
     const addToCartClickHandler = (eachItemClicked)=>{
@@ -27407,6 +27413,8 @@ const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItems
                 userSelectedItem
             ];
         });
+        const value = parseFloat(parseFloat(eachItemClicked.itemQuantity) * parseFloat(eachItemClicked.price));
+        if (!isNaN(value)) setTotal((prevTotal)=>prevTotal + value);
     };
     const removeFromCartClickHandler = (eachItemClicked)=>{
         setNumberOfItemsInCart((prev)=>prev - 1);
@@ -27443,7 +27451,7 @@ const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItems
                 alt: "picture of a ${name}"
             }, void 0, false, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 83,
+                lineNumber: 94,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27458,7 +27466,7 @@ const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItems
                                 src: (0, _iconAddToCartSvgDefault.default)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 94,
+                                lineNumber: 105,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27466,13 +27474,13 @@ const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItems
                                 children: "Add to Cart"
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 95,
+                                lineNumber: 106,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 93,
+                        lineNumber: 104,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27491,12 +27499,12 @@ const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItems
                                     d: "M0 .375h10v1.25H0V.375Z"
                                 }, void 0, false, {
                                     fileName: "src/components/EachDessertCard.jsx",
-                                    lineNumber: 114,
+                                    lineNumber: 125,
                                     columnNumber: 13
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 104,
+                                lineNumber: 115,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27505,7 +27513,7 @@ const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItems
                                 children: quantityForEachDessert(eachItem)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 117,
+                                lineNumber: 128,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
@@ -27521,24 +27529,24 @@ const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItems
                                     d: "M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
                                 }, void 0, false, {
                                     fileName: "src/components/EachDessertCard.jsx",
-                                    lineNumber: 131,
+                                    lineNumber: 142,
                                     columnNumber: 13
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/EachDessertCard.jsx",
-                                lineNumber: 121,
+                                lineNumber: 132,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 103,
+                        lineNumber: 114,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 88,
+                lineNumber: 99,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27548,7 +27556,7 @@ const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItems
                         children: category
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 137,
+                        lineNumber: 148,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27556,7 +27564,7 @@ const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItems
                         children: name
                     }, void 0, false, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 138,
+                        lineNumber: 149,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27567,19 +27575,19 @@ const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItems
                         ]
                     }, void 0, true, {
                         fileName: "src/components/EachDessertCard.jsx",
-                        lineNumber: 139,
+                        lineNumber: 150,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/EachDessertCard.jsx",
-                lineNumber: 136,
+                lineNumber: 147,
                 columnNumber: 7
             }, undefined)
         ]
     }, id, true, {
         fileName: "src/components/EachDessertCard.jsx",
-        lineNumber: 82,
+        lineNumber: 93,
         columnNumber: 5
     }, undefined);
 };
@@ -27821,17 +27829,17 @@ var _illustrationEmptyCartSvg = require("../../static/assets/images/illustration
 var _illustrationEmptyCartSvgDefault = parcelHelpers.interopDefault(_illustrationEmptyCartSvg);
 var _displayItemsAddedToCart = require("./DisplayItemsAddedToCart");
 var _displayItemsAddedToCartDefault = parcelHelpers.interopDefault(_displayItemsAddedToCart);
-const ShoppingCart = ({ itemsInCart, numberOfItemsInCart, setNumberOfItemsInCart })=>{
+const ShoppingCart = ({ itemsInCart, numberOfItemsInCart, setNumberOfItemsInCart, total })=>{
     const defaultText = "Your added items will appear here";
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex font-redhat flex-col bg-slate-50 ml-0 pl-4 pr-10 mt-10 mr-15 w-1/4 h-1/3 flex-grow-1",
+        className: "flex font-redhat flex-col bg-slate-50 ml-0 pl-4 pr-10 mt-10 mr-16 w-1/4 h-1/3 flex-grow-1",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 className: " text-orange-500 font-bold ",
                 children: `Your Cart (${numberOfItemsInCart})`
             }, void 0, false, {
                 fileName: "src/components/ShoppingCart.jsx",
-                lineNumber: 11,
+                lineNumber: 15,
                 columnNumber: 7
             }, undefined),
             !itemsInCart?.length && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -27844,7 +27852,7 @@ const ShoppingCart = ({ itemsInCart, numberOfItemsInCart, setNumberOfItemsInCart
                         height: "100"
                     }, void 0, false, {
                         fileName: "src/components/ShoppingCart.jsx",
-                        lineNumber: 14,
+                        lineNumber: 18,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27852,23 +27860,24 @@ const ShoppingCart = ({ itemsInCart, numberOfItemsInCart, setNumberOfItemsInCart
                         children: defaultText
                     }, void 0, false, {
                         fileName: "src/components/ShoppingCart.jsx",
-                        lineNumber: 21,
+                        lineNumber: 25,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _displayItemsAddedToCartDefault.default), {
                 itemsInCart: itemsInCart,
-                setNumberOfItemsInCart: setNumberOfItemsInCart
+                setNumberOfItemsInCart: setNumberOfItemsInCart,
+                total: total
             }, void 0, false, {
                 fileName: "src/components/ShoppingCart.jsx",
-                lineNumber: 26,
+                lineNumber: 30,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/ShoppingCart.jsx",
-        lineNumber: 10,
+        lineNumber: 14,
         columnNumber: 5
     }, undefined);
 };
@@ -27899,13 +27908,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _iconRemoveItemSvg = require("../../static/assets/images/icon-remove-item.svg");
 var _iconRemoveItemSvgDefault = parcelHelpers.interopDefault(_iconRemoveItemSvg);
-var _s = $RefreshSig$();
-const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart })=>{
-    _s();
-    const [orderTotal, setOrderTotal] = (0, _react.useState)(0);
-    // setOrderTotal((prevTotal) => {
-    //   prevTotal + totalSoFar;
-    // });
+const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart, total })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex flex-col space-y-2 divide-y divide-customRed",
         children: itemsInCart?.map((item, index)=>{
@@ -27917,7 +27920,7 @@ const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart })=>{
                         children: name
                     }, void 0, false, {
                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 17,
+                        lineNumber: 15,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27928,7 +27931,7 @@ const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart })=>{
                                 children: `${itemQuantity}x`
                             }, void 0, false, {
                                 fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                lineNumber: 19,
+                                lineNumber: 17,
                                 columnNumber: 15
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -27936,7 +27939,7 @@ const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart })=>{
                                 children: `@${price}`
                             }, void 0, false, {
                                 fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                lineNumber: 20,
+                                lineNumber: 18,
                                 columnNumber: 15
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -27944,7 +27947,7 @@ const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart })=>{
                                 children: `$${parseFloat(itemQuantity) * parseFloat(price)}`
                             }, void 0, false, {
                                 fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                lineNumber: 21,
+                                lineNumber: 19,
                                 columnNumber: 15
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
@@ -27959,41 +27962,40 @@ const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart })=>{
                                     d: "M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
                                 }, void 0, false, {
                                     fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                    lineNumber: 32,
+                                    lineNumber: 30,
                                     columnNumber: 17
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                lineNumber: 24,
+                                lineNumber: 22,
                                 columnNumber: 15
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 18,
+                        lineNumber: 16,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: `Order Total  $ ${orderTotal} `
+                        children: `Order Total  $ ${total} `
                     }, void 0, false, {
                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 38,
+                        lineNumber: 36,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, index, true, {
                 fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                lineNumber: 16,
+                lineNumber: 14,
                 columnNumber: 11
             }, undefined);
         })
     }, void 0, false, {
         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-        lineNumber: 12,
+        lineNumber: 10,
         columnNumber: 5
     }, undefined);
 };
-_s(DisplayItemsAddedToCart, "efbvckO7ui9hwKTufN39Ja008pg=");
 _c = DisplayItemsAddedToCart;
 exports.default = DisplayItemsAddedToCart;
 var _c;

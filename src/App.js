@@ -7,34 +7,39 @@ const  App = () => {
     const [allData, setAllData] = useState(null)
     const [numberOfItemsInCart, setNumberOfItemsInCart] = useState(0)
     const [itemsInCart, setItemsInCart] = useState([])
+    const [total, setTotal] = useState(0);
 
     // assigning ID for each dessert data
     const dataWithId = data.map((datum, index) => {
-        return {...datum, ["id"] : index+1, ["itemQuantity"]: 1}} )
+      return { ...datum, ["id"]: index + 1, ["itemQuantity"]: 1 };
+    });
 
     // fetching the data with Id
-useEffect (()=> {
-    fetch(dataWithId)
-    .then(setAllData(dataWithId))
-    .catch((error) => console.log("Error fetching data", error));
-},[])
+    useEffect(() => {
+      fetch(dataWithId)
+        .then(setAllData(dataWithId))
+        .catch((error) => console.log("Error fetching data", error));
+    }, []);
 
-return (
-  <div className="flex font-custom bg-rose-50 overflow-scroll">
-    <Dessert
-      data={allData}
-      numberOfItemsInCart={numberOfItemsInCart}
-      setNumberOfItemsInCart={setNumberOfItemsInCart}
-      itemsInCart={itemsInCart}
-      setItemsInCart={setItemsInCart}
-    />
-    <ShoppingCart
-      numberOfItemsInCart={numberOfItemsInCart}
-      setNumberOfItemsInCart={setNumberOfItemsInCart}
-      itemsInCart={itemsInCart}
-    />
-  </div>
-);
+    return (
+      <div className="flex font-custom bg-rose-50 overflow-scroll">
+        <Dessert
+          data={allData}
+          numberOfItemsInCart={numberOfItemsInCart}
+          setNumberOfItemsInCart={setNumberOfItemsInCart}
+          itemsInCart={itemsInCart}
+          setItemsInCart={setItemsInCart}
+          total={total}
+          setTotal={setTotal}
+        />
+        <ShoppingCart
+          numberOfItemsInCart={numberOfItemsInCart}
+          setNumberOfItemsInCart={setNumberOfItemsInCart}
+          itemsInCart={itemsInCart}
+          total={total}
+        />
+      </div>
+    );
 
 }
 
