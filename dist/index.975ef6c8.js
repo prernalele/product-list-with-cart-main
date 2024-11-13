@@ -27910,87 +27910,100 @@ var _iconRemoveItemSvg = require("../../static/assets/images/icon-remove-item.sv
 var _iconRemoveItemSvgDefault = parcelHelpers.interopDefault(_iconRemoveItemSvg);
 const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart, total })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-col space-y-2 divide-y divide-customRed",
-        children: itemsInCart?.map((item, index)=>{
-            const { name, itemQuantity, price } = item;
-            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "grow",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: name
-                    }, void 0, false, {
-                        fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 15,
-                        columnNumber: 13
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "flex flex-row justify-start border-spacing-4 ",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "text-customRed ml-2 font-medium",
-                                children: `${itemQuantity}x`
-                            }, void 0, false, {
-                                fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                lineNumber: 17,
-                                columnNumber: 15
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "text-gray-500 ml-4 font-light",
-                                children: `@${price}`
-                            }, void 0, false, {
-                                fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                lineNumber: 18,
-                                columnNumber: 15
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "text-gray-700 ml-4 font-medium",
-                                children: `$${parseFloat(itemQuantity) * parseFloat(price)}`
-                            }, void 0, false, {
-                                fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                lineNumber: 19,
-                                columnNumber: 15
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
-                                className: "ml-10",
-                                xmlns: "http://www.w3.org/2000/svg",
-                                width: "10",
-                                height: "10",
-                                fill: "none",
-                                viewBox: "0 0 10 10",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
-                                    fill: "#CAAFA7",
-                                    d: "M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
+        className: "flex flex-col space-y-2 divide-y divide-customRed mb-5",
+        children: [
+            itemsInCart?.map((item, index)=>{
+                const { name, itemQuantity, price } = item;
+                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "grow m-5",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: "text-rose-950 font-medium",
+                            children: name
+                        }, void 0, false, {
+                            fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                            lineNumber: 15,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "flex flex-row",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "flex flex-row justify-start  ",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            className: "text-customRed ml-2 font-medium",
+                                            children: `${itemQuantity}x`
+                                        }, void 0, false, {
+                                            fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                                            lineNumber: 18,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            className: "text-gray-500 ml-4 font-light",
+                                            children: `@${price}`
+                                        }, void 0, false, {
+                                            fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                                            lineNumber: 19,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            className: "text-gray-700 ml-4 font-medium",
+                                            children: `$${parseFloat(itemQuantity) * parseFloat(price)}`
+                                        }, void 0, false, {
+                                            fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                                            lineNumber: 20,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                                    lineNumber: 17,
+                                    columnNumber: 15
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+                                    className: "ml-10",
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    width: "10",
+                                    height: "10",
+                                    fill: "none",
+                                    viewBox: "0 0 10 10",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                        fill: "#CAAFA7",
+                                        d: "M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
+                                    }, void 0, false, {
+                                        fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                                        lineNumber: 32,
+                                        columnNumber: 17
+                                    }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                    lineNumber: 30,
-                                    columnNumber: 17
+                                    lineNumber: 24,
+                                    columnNumber: 15
                                 }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                lineNumber: 22,
-                                columnNumber: 15
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 16,
-                        columnNumber: 13
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: `Order Total  $ ${total} `
-                    }, void 0, false, {
-                        fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 36,
-                        columnNumber: 13
-                    }, undefined)
-                ]
-            }, index, true, {
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                            lineNumber: 16,
+                            columnNumber: 13
+                        }, undefined)
+                    ]
+                }, index, true, {
+                    fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                    lineNumber: 14,
+                    columnNumber: 11
+                }, undefined);
+            }),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "m-5",
+                children: `Order Total  $ ${total} `
+            }, void 0, false, {
                 fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                lineNumber: 14,
-                columnNumber: 11
-            }, undefined);
-        })
-    }, void 0, false, {
+                lineNumber: 41,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/components/DisplayItemsAddedToCart.jsx",
         lineNumber: 10,
         columnNumber: 5
