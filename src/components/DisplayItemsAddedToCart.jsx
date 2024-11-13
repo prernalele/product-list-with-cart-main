@@ -13,7 +13,7 @@ const DisplayItemsAddedToCart = ({
         return (
           <div key={index} className="grow m-5">
             <p className="text-rose-950 font-medium">{name}</p>
-            <div className="flex flex-row">
+            <div className="flex flex-row justify-between">
               <div className="flex flex-row justify-start  ">
                 <span className="text-customRed ml-2 font-medium">{`${itemQuantity}x`}</span>
                 <span className="text-gray-500 ml-4 font-light">{`@${price}`}</span>
@@ -38,7 +38,12 @@ const DisplayItemsAddedToCart = ({
           </div>
         );
       })}
-      <div className="m-5">{`Order Total  $ ${total} `}</div>
+      {total !== 0 && (
+        <div className=" flex flex-row ml-5 pt-5 justify-between">
+          <span>Order Total</span>
+          <span className="font-bold">{`$${total}`}</span>
+        </div>
+      )}
     </div>
   );
 };

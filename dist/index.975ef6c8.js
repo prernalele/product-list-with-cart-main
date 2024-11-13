@@ -27926,7 +27926,7 @@ const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart, total })
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "flex flex-row",
+                            className: "flex flex-row justify-between",
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "flex flex-row justify-start  ",
@@ -27994,13 +27994,29 @@ const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart, total })
                     columnNumber: 11
                 }, undefined);
             }),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "m-5",
-                children: `Order Total  $ ${total} `
-            }, void 0, false, {
+            total !== 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: " flex flex-row ml-5 pt-5 justify-between",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: "Order Total"
+                    }, void 0, false, {
+                        fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                        lineNumber: 43,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "font-bold",
+                        children: `$${total}`
+                    }, void 0, false, {
+                        fileName: "src/components/DisplayItemsAddedToCart.jsx",
+                        lineNumber: 44,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                lineNumber: 41,
-                columnNumber: 7
+                lineNumber: 42,
+                columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
