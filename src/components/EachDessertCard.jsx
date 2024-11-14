@@ -76,7 +76,11 @@ const EachDessertCard = ({
       /*if (prevItems.length !== 0 ) {
                 return [...prevItems, userSelectedItem]
             }*/
+
       return prevItems?.length > 0 && !isItemAlreadyPresent && [...prevItems];
+    });
+    setTotal((prevTotal) => {
+      return prevTotal - parseFloat(eachItemClicked.price);
     });
   };
 

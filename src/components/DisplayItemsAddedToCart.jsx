@@ -33,7 +33,7 @@ const DisplayItemsAddedToCart = ({
   return (
     <div className="flex flex-col space-y-2 divide-y divide-customRed mb-5">
       {itemsInCart.length > 0 &&
-        total !== 0 &&
+        total > 0 &&
         itemsInCart?.map((item, index) => {
           const { name, itemQuantity, price } = item;
           return (
