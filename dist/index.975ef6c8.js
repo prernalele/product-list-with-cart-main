@@ -27271,7 +27271,9 @@ const App = ()=>{
                 numberOfItemsInCart: numberOfItemsInCart,
                 setNumberOfItemsInCart: setNumberOfItemsInCart,
                 itemsInCart: itemsInCart,
-                total: total
+                setItemsInCart: setItemsInCart,
+                total: total,
+                setTotal: setTotal
             }, void 0, false, {
                 fileName: "src/App.js",
                 lineNumber: 35,
@@ -27417,7 +27419,7 @@ const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItems
         if (!isNaN(value)) setTotal((prevTotal)=>prevTotal + value);
     };
     const removeFromCartClickHandler = (eachItemClicked)=>{
-        setNumberOfItemsInCart((prev)=>prev - 1);
+        setNumberOfItemsInCart((prev)=>prev > 0 ? prev - 1 : 0);
         const userSelectedItemId = eachItemClicked.id;
         setItemsInCart((prevItems)=>{
             const isItemAlreadyPresent = prevItems.find((item)=>item.id === userSelectedItemId);
@@ -27829,7 +27831,7 @@ var _illustrationEmptyCartSvg = require("../../static/assets/images/illustration
 var _illustrationEmptyCartSvgDefault = parcelHelpers.interopDefault(_illustrationEmptyCartSvg);
 var _displayItemsAddedToCart = require("./DisplayItemsAddedToCart");
 var _displayItemsAddedToCartDefault = parcelHelpers.interopDefault(_displayItemsAddedToCart);
-const ShoppingCart = ({ itemsInCart, numberOfItemsInCart, setNumberOfItemsInCart, total })=>{
+const ShoppingCart = ({ itemsInCart, setItemsInCart, numberOfItemsInCart, setNumberOfItemsInCart, total, setTotal })=>{
     const defaultText = "Your added items will appear here";
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex font-redhat flex-col bg-slate-50 ml-0 pl-4 pr-10 mt-10 mr-16 w-1/4 h-1/3 flex-grow-1",
@@ -27839,10 +27841,10 @@ const ShoppingCart = ({ itemsInCart, numberOfItemsInCart, setNumberOfItemsInCart
                 children: `Your Cart (${numberOfItemsInCart})`
             }, void 0, false, {
                 fileName: "src/components/ShoppingCart.jsx",
-                lineNumber: 15,
+                lineNumber: 17,
                 columnNumber: 7
             }, undefined),
-            !itemsInCart?.length && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+            numberOfItemsInCart === 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                         className: "flex justify-center",
@@ -27852,7 +27854,7 @@ const ShoppingCart = ({ itemsInCart, numberOfItemsInCart, setNumberOfItemsInCart
                         height: "100"
                     }, void 0, false, {
                         fileName: "src/components/ShoppingCart.jsx",
-                        lineNumber: 18,
+                        lineNumber: 20,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27860,24 +27862,26 @@ const ShoppingCart = ({ itemsInCart, numberOfItemsInCart, setNumberOfItemsInCart
                         children: defaultText
                     }, void 0, false, {
                         fileName: "src/components/ShoppingCart.jsx",
-                        lineNumber: 25,
+                        lineNumber: 27,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _displayItemsAddedToCartDefault.default), {
                 itemsInCart: itemsInCart,
+                setItemsInCart: setItemsInCart,
                 setNumberOfItemsInCart: setNumberOfItemsInCart,
-                total: total
+                total: total,
+                setTotal: setTotal
             }, void 0, false, {
                 fileName: "src/components/ShoppingCart.jsx",
-                lineNumber: 30,
+                lineNumber: 32,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/ShoppingCart.jsx",
-        lineNumber: 14,
+        lineNumber: 16,
         columnNumber: 5
     }, undefined);
 };
@@ -27908,13 +27912,35 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _iconRemoveItemSvg = require("../../static/assets/images/icon-remove-item.svg");
 var _iconRemoveItemSvgDefault = parcelHelpers.interopDefault(_iconRemoveItemSvg);
-const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart, total })=>{
+const DisplayItemsAddedToCart = ({ itemsInCart, setItemsInCart, setNumberOfItemsInCart, total, setTotal })=>{
+    const removeItemFromTheCart = (eachItemClicked)=>{
+        setNumberOfItemsInCart((prev)=>prev > 0 ? prev - 1 : 0);
+        const userSelectedItemId = eachItemClicked.id;
+        setItemsInCart((prevItems)=>{
+            if (prevItems.length !== 0) {
+                const updatedItemList = prevItems.map((item)=>{
+                    if (item.id === userSelectedItemId) return {
+                        ...item,
+                        itemQuantity: item.itemQuantity > 0 ? item.itemQuantity - 1 : 0
+                    };
+                    return item;
+                });
+                return updatedItemList;
+            }
+            return prevItems?.length > 0 && !isItemAlreadyPresent && [
+                ...prevItems
+            ];
+        });
+        setTotal((prevTotal)=>{
+            return prevTotal - parseFloat(eachItemClicked.price);
+        });
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex flex-col space-y-2 divide-y divide-customRed mb-5",
         children: [
-            itemsInCart?.map((item, index)=>{
+            itemsInCart.length > 0 && total !== 0 && itemsInCart?.map((item, index)=>{
                 const { name, itemQuantity, price } = item;
-                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                return itemQuantity !== 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "grow m-5",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27922,8 +27948,8 @@ const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart, total })
                             children: name
                         }, void 0, false, {
                             fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                            lineNumber: 15,
-                            columnNumber: 13
+                            lineNumber: 42,
+                            columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "flex flex-row justify-between",
@@ -27936,30 +27962,30 @@ const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart, total })
                                             children: `${itemQuantity}x`
                                         }, void 0, false, {
                                             fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                            lineNumber: 18,
-                                            columnNumber: 17
+                                            lineNumber: 45,
+                                            columnNumber: 21
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                             className: "text-gray-500 ml-4 font-light",
                                             children: `@${price}`
                                         }, void 0, false, {
                                             fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                            lineNumber: 19,
-                                            columnNumber: 17
+                                            lineNumber: 46,
+                                            columnNumber: 21
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                             className: "text-gray-700 ml-4 font-medium",
                                             children: `$${parseFloat(itemQuantity) * parseFloat(price)}`
                                         }, void 0, false, {
                                             fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                            lineNumber: 20,
-                                            columnNumber: 17
+                                            lineNumber: 47,
+                                            columnNumber: 21
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                    lineNumber: 17,
-                                    columnNumber: 15
+                                    lineNumber: 44,
+                                    columnNumber: 19
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
                                     className: "ml-10",
@@ -27968,40 +27994,41 @@ const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart, total })
                                     height: "10",
                                     fill: "none",
                                     viewBox: "0 0 10 10",
+                                    onClick: ()=>removeItemFromTheCart(item),
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
                                         fill: "#CAAFA7",
                                         d: "M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
                                     }, void 0, false, {
                                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                        lineNumber: 32,
-                                        columnNumber: 17
+                                        lineNumber: 60,
+                                        columnNumber: 21
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                                    lineNumber: 24,
-                                    columnNumber: 15
+                                    lineNumber: 51,
+                                    columnNumber: 19
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                            lineNumber: 16,
-                            columnNumber: 13
+                            lineNumber: 43,
+                            columnNumber: 17
                         }, undefined)
                     ]
                 }, index, true, {
                     fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                    lineNumber: 14,
-                    columnNumber: 11
+                    lineNumber: 41,
+                    columnNumber: 15
                 }, undefined);
             }),
-            total !== 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            total > 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: " flex flex-row ml-5 pt-5 justify-between",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Order Total"
                     }, void 0, false, {
                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 43,
+                        lineNumber: 72,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -28009,19 +28036,19 @@ const DisplayItemsAddedToCart = ({ itemsInCart, setNumberOfItemsInCart, total })
                         children: `$${total}`
                     }, void 0, false, {
                         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                        lineNumber: 44,
+                        lineNumber: 73,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/DisplayItemsAddedToCart.jsx",
-                lineNumber: 42,
+                lineNumber: 71,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/DisplayItemsAddedToCart.jsx",
-        lineNumber: 10,
+        lineNumber: 34,
         columnNumber: 5
     }, undefined);
 };

@@ -36,7 +36,9 @@ const  App = () => {
           numberOfItemsInCart={numberOfItemsInCart}
           setNumberOfItemsInCart={setNumberOfItemsInCart}
           itemsInCart={itemsInCart}
+          setItemsInCart={setItemsInCart}
           total={total}
+          setTotal={setTotal}
         />
       </div>
     );

@@ -4,16 +4,18 @@ import DisplayItemsAddedToCart from "./DisplayItemsAddedToCart";
 
 const ShoppingCart = ({
   itemsInCart,
+  setItemsInCart,
   numberOfItemsInCart,
   setNumberOfItemsInCart,
   total,
+  setTotal,
 }) => {
   const defaultText = "Your added items will appear here";
 
   return (
     <div className="flex font-redhat flex-col bg-slate-50 ml-0 pl-4 pr-10 mt-10 mr-16 w-1/4 h-1/3 flex-grow-1">
       <p className=" text-orange-500 font-bold ">{`Your Cart (${numberOfItemsInCart})`}</p>
-      {!itemsInCart?.length && (
+      {numberOfItemsInCart === 0 && (
         <>
           <img
             className="flex justify-center"
@@ -29,8 +31,10 @@ const ShoppingCart = ({
       )}
       <DisplayItemsAddedToCart
         itemsInCart={itemsInCart}
+        setItemsInCart={setItemsInCart}
         setNumberOfItemsInCart={setNumberOfItemsInCart}
         total={total}
+        setTotal={setTotal}
       />
     </div>
   );

@@ -55,7 +55,7 @@ const EachDessertCard = ({
   };
 
   const removeFromCartClickHandler = (eachItemClicked) => {
-    setNumberOfItemsInCart((prev) => prev - 1);
+    setNumberOfItemsInCart((prev) => (prev > 0 ? prev - 1 : 0));
     const userSelectedItemId = eachItemClicked.id;
     setItemsInCart((prevItems) => {
       const isItemAlreadyPresent = prevItems.find(
