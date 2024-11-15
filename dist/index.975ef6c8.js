@@ -27320,7 +27320,7 @@ const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCar
         className: "flex flex-col ml-10 mt-6 h-dvh",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                className: "font-redhat mb-5 ml-4 text-lg font-bold",
+                className: "font-redhat mb-9 ml-4 text-4xl font-bold",
                 children: pageHeading
             }, void 0, false, {
                 fileName: "src/components/Dessert.jsx",
@@ -27328,7 +27328,7 @@ const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCar
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex flex-row flex-wrap ",
+                className: "flex flex-row flex-wrap",
                 children: data?.map((eachItem, index)=>{
                     //const {id, image, name, price, category, itemQuantity} = eachItem;
                     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _eachDessertCardDefault.default), {
@@ -27342,13 +27342,13 @@ const Dessert = ({ data, numberOfItemsInCart, setNumberOfItemsInCart, itemsInCar
                         setTotal: setTotal
                     }, index, false, {
                         fileName: "src/components/Dessert.jsx",
-                        lineNumber: 22,
+                        lineNumber: 24,
                         columnNumber: 13
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/components/Dessert.jsx",
-                lineNumber: 18,
+                lineNumber: 20,
                 columnNumber: 7
             }, undefined)
         ]
@@ -27451,7 +27451,7 @@ const EachDessertCard = ({ eachItem, data, numberOfItemsInCart, setNumberOfItems
         className: "flex flex-grow flex-col mx-4 mb-20 font-redhat",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "size-52 -my-5 group-hover:outline-customRed",
+                className: "size-60 -my-5 group-hover:outline-dotted",
                 src: desktop,
                 alt: "picture of a ${name}"
             }, void 0, false, {
@@ -27837,31 +27837,32 @@ var _displayItemsAddedToCartDefault = parcelHelpers.interopDefault(_displayItems
 const ShoppingCart = ({ itemsInCart, setItemsInCart, numberOfItemsInCart, setNumberOfItemsInCart, total, setTotal })=>{
     const defaultText = "Your added items will appear here";
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex font-redhat flex-col bg-slate-50 ml-0 pl-4 pr-10 mt-10 mr-16 w-1/4 h-1/3 flex-grow-1",
+        className: "flex font-redhat flex-col bg-slate-50 ml-2 pl-4 pr-10 mt-10 mr-16 w-2/4 h-2/4 flex-grow-1 ",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: " text-orange-500 font-bold ",
+                className: " text-orange-500 font-bold m-4 ",
                 children: `Your Cart (${numberOfItemsInCart})`
             }, void 0, false, {
                 fileName: "src/components/ShoppingCart.jsx",
                 lineNumber: 17,
                 columnNumber: 7
             }, undefined),
-            numberOfItemsInCart === 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+            numberOfItemsInCart === 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex flex-1 flex-col justify-items-stretch",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                        className: "flex justify-center",
                         src: (0, _illustrationEmptyCartSvgDefault.default),
                         alt: "Empty Cart illustration",
                         width: "100",
-                        height: "100"
+                        height: "100",
+                        className: ""
                     }, void 0, false, {
                         fileName: "src/components/ShoppingCart.jsx",
                         lineNumber: 20,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "flex font-redhat justify-center text-red-900",
+                        className: " font-redhat text-red-900",
                         children: defaultText
                     }, void 0, false, {
                         fileName: "src/components/ShoppingCart.jsx",
@@ -27869,7 +27870,11 @@ const ShoppingCart = ({ itemsInCart, setItemsInCart, numberOfItemsInCart, setNum
                         columnNumber: 11
                     }, undefined)
                 ]
-            }, void 0, true),
+            }, void 0, true, {
+                fileName: "src/components/ShoppingCart.jsx",
+                lineNumber: 19,
+                columnNumber: 9
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _displayItemsAddedToCartDefault.default), {
                 itemsInCart: itemsInCart,
                 setItemsInCart: setItemsInCart,
@@ -27878,7 +27883,7 @@ const ShoppingCart = ({ itemsInCart, setItemsInCart, numberOfItemsInCart, setNum
                 setTotal: setTotal
             }, void 0, false, {
                 fileName: "src/components/ShoppingCart.jsx",
-                lineNumber: 32,
+                lineNumber: 30,
                 columnNumber: 7
             }, undefined)
         ]
